@@ -11,6 +11,8 @@ adicionales. FRASES, PALETA, RADIOS y los tamaños de etiquetas están al princi
 del generador. PERIODO_LUZ cambia conjuntamente el degradado y la iluminación
 de la malla. TIEMPO_FRASE controla cada frase; el ciclo completo dura cuatro
 veces ese valor. ESCALA_RADIAL y ESCALA_VERTICAL controlan la cámara.
+La lista `particulas` configura las posiciones, duración del cruce, periodo,
+retraso, color, opacidad y radio de cada trayectoria.
 
 ## Campo gravitacional
 
@@ -37,8 +39,10 @@ CSS integrado anima la opacidad de la iluminación en un ciclo de 18 segundos,
 compartido entre los anillos interiores del campo y el degradado del nombre.
 El degradado se desplaza suavemente dentro de un clipPath; sus tonos negro,
 escarlata, naranja y amarillo mantienen el contraste del texto. Las animaciones
-se limitan a tres familias: terminal, intensidad compartida y desplazamiento del
-degradado. Se retiraron las trazas móviles y la pequeña órbita.
+originales pertenecen a tres familias: terminal, intensidad compartida y
+desplazamiento del degradado. La revisión con partículas añade siete
+trayectorias independientes, sin cambiar esas tres familias. Se retiraron
+previamente las trazas móviles del campo y la pequeña órbita.
 La terminal usa recorte escalonado, cuatro intervalos de seis segundos y cursor
 móvil; escribe durante 3.6 segundos y mantiene la frase unos 2.1 segundos.
 El SVG tiene un estado base con identidad, primera frase y malla visibles.
@@ -50,9 +54,33 @@ aplicó la preferencia emulada; por ello se entrega `assets/banner-static.svg`
 sin animaciones como alternativa explícita. Para usarla, cambiar el src del README.
 Las PNG de revisión se generan desde esta alternativa estática.
 
+## Partículas inspiradas en neutrinos
+
+Son una interpretación artística, no una simulación de propagación o detección.
+Siete puntos de radio 1.8–2.2 px y estelas de 24 px, grosor 0.7 px. Las cuatro
+trayectorias iniciales cruzan corredores sin texto; una atraviesa la malla.
+Tres diagonales nuevas recorren la tarjeta completa y pasan detrás de máscaras
+fijas en las zonas de contenido. No se modifica el recorrido al ocultarse bajo
+nombre, terminal o fórmulas. El clip global contiene las estelas en el borde.
+Se usan naranja y amarillo pálido, con opacidades de 0.54–0.64; la estela aplica
+además una opacidad de 0.4.
+
+Los cruces duran 0.85, 1.1, 1.3 y 1 segundo. Los ciclos duran 47, 61, 73 y 89
+segundos, con retrasos iniciales de 3, 16, 30 y 44 segundos. Las diagonales
+duran 1.15, 1.3 y 1.05 segundos, en ciclos de 107, 109 y 127 segundos y
+retrasos iniciales de 8, 23 y 38 segundos. Los keyframes
+interpolan posiciones en línea recta, desvanecen los extremos y mantienen
+opacidad cero durante el resto del ciclo. La secuencia es determinista.
+
+Dos trazas muy discretas quedan congeladas en el estado base y la versión
+estática. Una animación mínima las oculta cuando funciona la versión animada.
+Si el renderizador reconoce `prefers-reduced-motion`, se detienen las
+animaciones y vuelven esas dos trazas. Se mantiene la alternativa SVG estática
+para los renderizadores que no transmiten la preferencia a una imagen SVG.
+
 ## Verificación
 
-XML validado al generar. Banner animado: aproximadamente 43 KB, sin scripts,
+XML validado al generar. Banner animado: 49,117 bytes, sin scripts,
 foreignObject, fuentes externas ni rasterizados. Vista como img probada en
 Microsoft Edge / Chromium 155.0.4283.45. Se revisan PNG a 1200, 800 y 600 px,
 y capturas animadas a 2.4 y 8.1 segundos. Se comprueban las cuatro frases en sus
@@ -64,6 +92,16 @@ subtítulo, terminal y geometría tienen prioridad. El cirílico aparece una vez
 
 Las capturas se prepararon con Playwright, Marked y Edge en el entorno local.
 Estas herramientas son de revisión; el banner y el generador no dependen de ellas.
+La revisión de partículas usa `scripts/preview_particulas.cjs`: comprueba el
+recorrido completo contra las cajas tipográficas, desaparición durante las
+pausas, estados estáticos y movimiento reducido con SVG integrado. Captura cada
+cruce como imagen SVG a 1200 px y uno a 800/600 px. Las diagonales se revisan
+en 21 fotogramas frente a una base sin partículas para verificar que no cambian
+píxeles en las zonas protegidas; `scripts/check_particle_masks.py` usa Pillow
+solo para esa revisión local. El resultado se guarda en
+`docs/review/particulas/validacion.json` durante la revisión local. La publicación
+del banner, alternativa estática, generador y notas fue autorizada por el titular.
+Las capturas y herramientas de revisión permanecen en el espacio de trabajo local.
 
 ## Corrección visual
 
