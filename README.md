@@ -14,7 +14,7 @@ I'm a physics undergraduate interested in computational physics, astrophysics, a
 
 ## Selected projects
 
-- [NutrequinePro](https://github.com/VicWaltzO/NutrequinePro) — A web app for managing sales, production, inventory, payments, and expenses.
+- [NutrequinePro](https://github.com/VicWaltzO/NutrequinePro) — Business management application for equine nutrition operations, integrating sales, production, inventory, payments, and financial tracking
 
 ## Currently exploring
 
