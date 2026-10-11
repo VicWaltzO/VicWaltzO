@@ -30,73 +30,69 @@
       .avance {transform:translateX(var(--ancho))}
       .trayectoria,.particulas-estaticas {animation:none!important}
       .trayectoria {opacity:0!important}
-      .particulas-estaticas {opacity:.32!important}
+      .particulas-estaticas {opacity:.42!important}
     }
     
-    .particulas-estaticas {animation:ocultar-particulas .001s steps(1,end) forwards}
-    @keyframes ocultar-particulas {0%,100%{opacity:0}}
-    
-
-    .trayectoria-0 {animation:cruzar-0 47s linear 3s infinite}
+    .trayectoria-0 {animation:cruzar-0 28s linear 0.6s infinite}
     @keyframes cruzar-0 {
       0% {transform:translate(44px,72px);opacity:0}
-      0.180851% {opacity:0.62}
-      1.627660% {opacity:0.62}
-      1.808511% {transform:translate(634px,75px);opacity:0}
-      100% {transform:translate(634px,75px);opacity:0}
+      0.410714% {opacity:0.84}
+      3.696429% {opacity:0.84}
+      4.107143% {transform:translate(634px,72px);opacity:0}
+      100% {transform:translate(634px,72px);opacity:0}
     }
 
-    .trayectoria-1 {animation:cruzar-1 61s linear 16s infinite}
+    .trayectoria-1 {animation:cruzar-1 28s linear 9.1s infinite}
     @keyframes cruzar-1 {
       0% {transform:translate(624px,275px);opacity:0}
-      0.180328% {opacity:0.64}
-      1.622951% {opacity:0.64}
-      1.803279% {transform:translate(70px,280px);opacity:0}
+      0.482143% {opacity:0.86}
+      4.339286% {opacity:0.86}
+      4.821429% {transform:translate(70px,280px);opacity:0}
       100% {transform:translate(70px,280px);opacity:0}
     }
 
-    .trayectoria-2 {animation:cruzar-2 73s linear 30s infinite}
+    .trayectoria-2 {animation:cruzar-2 28s linear 4.6s infinite}
     @keyframes cruzar-2 {
       0% {transform:translate(746px,102px);opacity:0}
-      0.178082% {opacity:0.58}
-      1.602740% {opacity:0.58}
-      1.780822% {transform:translate(1068px,186px);opacity:0}
+      0.500000% {opacity:0.84}
+      4.500000% {opacity:0.84}
+      5.000000% {transform:translate(1068px,186px);opacity:0}
       100% {transform:translate(1068px,186px);opacity:0}
     }
 
-    .trayectoria-3 {animation:cruzar-3 89s linear 44s infinite}
+    .trayectoria-3 {animation:cruzar-3 28s linear 17.6s infinite}
     @keyframes cruzar-3 {
       0% {transform:translate(1162px,88px);opacity:0}
-      0.112360% {opacity:0.62}
-      1.011236% {opacity:0.62}
-      1.123596% {transform:translate(1092px,202px);opacity:0}
+      0.446429% {opacity:0.85}
+      4.017857% {opacity:0.85}
+      4.464286% {transform:translate(1092px,202px);opacity:0}
       100% {transform:translate(1092px,202px);opacity:0}
     }
 
-    .trayectoria-4 {animation:cruzar-4 107s linear 8s infinite}
+    .trayectoria-4 {animation:cruzar-4 28s linear 12.6s infinite}
     @keyframes cruzar-4 {
       0% {transform:translate(18px,342px);opacity:0}
-      0.107477% {opacity:0.56}
-      0.967290% {opacity:0.56}
-      1.074766% {transform:translate(1182px,18px);opacity:0}
+      0.535714% {opacity:0.86}
+      4.821429% {opacity:0.86}
+      5.357143% {transform:translate(1182px,18px);opacity:0}
       100% {transform:translate(1182px,18px);opacity:0}
     }
 
-    .trayectoria-5 {animation:cruzar-5 109s linear 23s infinite}
+    .trayectoria-5 {animation:cruzar-5 28s linear 25.1s infinite}
     @keyframes cruzar-5 {
       0% {transform:translate(18px,18px);opacity:0}
-      0.119266% {opacity:0.54}
-      1.073394% {opacity:0.54}
-      1.192661% {transform:translate(1182px,342px);opacity:0}
+      0.535714% {opacity:0.84}
+      4.821429% {opacity:0.84}
+      5.357143% {transform:translate(1182px,342px);opacity:0}
       100% {transform:translate(1182px,342px);opacity:0}
     }
 
-    .trayectoria-6 {animation:cruzar-6 127s linear 38s infinite}
+    .trayectoria-6 {animation:cruzar-6 28s linear 20.6s infinite}
     @keyframes cruzar-6 {
       0% {transform:translate(1182px,74px);opacity:0}
-      0.082677% {opacity:0.58}
-      0.744094% {opacity:0.58}
-      0.826772% {transform:translate(18px,306px);opacity:0}
+      0.517857% {opacity:0.85}
+      4.660714% {opacity:0.85}
+      5.178571% {transform:translate(18px,306px);opacity:0}
       100% {transform:translate(18px,306px);opacity:0}
     }</style>
 <defs>
@@ -136,47 +132,47 @@
 
 <g id="particulas" aria-hidden="true" clip-path="url(#borde-particulas)">
 <g class="trayectoria trayectoria-0" opacity="0">
-<path d="M-24.00 -0.12L0 0" fill="none" stroke="#F6DEA4" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
-<circle r="2" fill="#F6DEA4"/>
+<path d="M-36.00 0.00L0 0" fill="none" stroke="#F6DEA4" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.8" fill="#F6DEA4"/>
 </g>
 <g class="trayectoria trayectoria-1" opacity="0">
-<path d="M24.00 -0.22L0 0" fill="none" stroke="#F3761B" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
-<circle r="2.2" fill="#F3761B"/>
+<path d="M36.00 -0.32L0 0" fill="none" stroke="#F3761B" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.8" fill="#F3761B"/>
 </g>
 <g class="trayectoria trayectoria-2" opacity="0">
-<path d="M-23.22 -6.06L0 0" fill="none" stroke="#F6DEA4" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
-<circle r="1.8" fill="#F6DEA4"/>
+<path d="M-34.83 -9.09L0 0" fill="none" stroke="#F6DEA4" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.6" fill="#F6DEA4"/>
 </g>
 <g class="trayectoria trayectoria-3" opacity="0">
-<path d="M12.56 -20.45L0 0" fill="none" stroke="#F3761B" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
-<circle r="2" fill="#F3761B"/>
+<path d="M18.84 -30.68L0 0" fill="none" stroke="#F3761B" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.6" fill="#F3761B"/>
 </g>
 <g class="diagonal-protegida" mask="url(#proteccion-particulas)">
 <g class="trayectoria trayectoria-4" opacity="0">
-<path d="M-23.12 6.44L0 0" fill="none" stroke="#F6DEA4" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
-<circle r="1.8" fill="#F6DEA4"/>
+<path d="M-34.68 9.65L0 0" fill="none" stroke="#F6DEA4" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.8" fill="#F6DEA4"/>
 </g>
 </g>
 <g class="diagonal-protegida" mask="url(#proteccion-particulas)">
 <g class="trayectoria trayectoria-5" opacity="0">
-<path d="M-23.12 -6.44L0 0" fill="none" stroke="#F3761B" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
-<circle r="2" fill="#F3761B"/>
+<path d="M-34.68 -9.65L0 0" fill="none" stroke="#F3761B" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.6" fill="#F3761B"/>
 </g>
 </g>
 <g class="diagonal-protegida" mask="url(#proteccion-particulas)">
 <g class="trayectoria trayectoria-6" opacity="0">
-<path d="M23.54 -4.69L0 0" fill="none" stroke="#F6DEA4" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
-<circle r="1.8" fill="#F6DEA4"/>
+<path d="M35.31 -7.04L0 0" fill="none" stroke="#F6DEA4" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.8" fill="#F6DEA4"/>
 </g>
 </g>
-<g class="particulas-estaticas" opacity=".32">
-<g transform="translate(339.0 73.5)">
-<path d="M-24.00 -0.12L0 0" fill="none" stroke="#F6DEA4" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
-<circle r="2" fill="#F6DEA4"/>
+<g class="particulas-estaticas" opacity="0.42">
+<g transform="translate(339.0 72.0)">
+<path d="M-36.00 0.00L0 0" fill="none" stroke="#F6DEA4" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.8" fill="#F6DEA4"/>
 </g>
 <g transform="translate(907.0 144.0)">
-<path d="M-23.22 -6.06L0 0" fill="none" stroke="#F6DEA4" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
-<circle r="1.8" fill="#F6DEA4"/>
+<path d="M-34.83 -9.09L0 0" fill="none" stroke="#F6DEA4" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.6" fill="#F6DEA4"/>
 </g>
 </g></g>
 
