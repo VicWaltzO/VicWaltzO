@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="titulo descripcion">
 <title id="titulo">Owen A. Hurtado | Scientific Computing</title>
-<desc id="descripcion">Physics undergraduate exploring computation, numerical methods and astrophysics. The Flamm paraboloid represents an equatorial spatial slice outside a Schwarzschild black hole's event horizon. The surface is stationary, with synchronized decorative lighting.</desc>
+<desc id="descripcion">Physics undergraduate exploring computation, numerical methods and astrophysics. The Flamm paraboloid represents an equatorial spatial slice outside a Schwarzschild black hole's event horizon. The surface is stationary, with synchronized decorative lighting. Occasional straight particle trails are an artistic interpretation inspired by neutrinos; their timing is deterministic.</desc>
 <style>
     text {font-family:'Segoe UI',Arial,sans-serif;fill:#F2EEE9}
     .mono {font-family:Consolas,'DejaVu Sans Mono',monospace}
@@ -27,6 +27,17 @@
 </radialGradient>
 <clipPath id="panel-identidad"><rect x="28" y="30" width="632" height="296" rx="12"/></clipPath>
 <pattern id="cuadricula" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#C2B6C4" stroke-opacity=".055"/></pattern>
+<clipPath id="borde-particulas"><rect x="2" y="2" width="1196" height="356" rx="14"/></clipPath>
+<mask id="proteccion-particulas" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="0" y="0" width="1200" height="360">
+<rect width="1200" height="360" fill="white"/>
+<rect x="108" y="41" width="300" height="26" fill="black"/>
+<rect x="54" y="78" width="590" height="108" fill="black"/>
+<rect x="58" y="198" width="582" height="60" fill="black"/>
+<rect x="58" y="284" width="452" height="29" fill="black"/>
+<rect x="714" y="41" width="344" height="28" fill="black"/>
+<rect x="982" y="207" width="175" height="47" fill="black"/>
+<rect x="710" y="230" width="452" height="114" fill="black"/>
+</mask>
 <clipPath id="texto-0"><rect class="recorte" x="82" y="211" width="497.20000000000005" height="29" style="--ancho:497.20000000000005px;--letras:44"/></clipPath>
 <clipPath id="texto-1"><rect class="recorte" x="82" y="211" width="485.90000000000003" height="29" style="--ancho:485.90000000000003px;--letras:43"/></clipPath>
 <clipPath id="texto-2"><rect class="recorte" x="82" y="211" width="463.3" height="29" style="--ancho:463.3px;--letras:41"/></clipPath>
@@ -36,6 +47,53 @@
 <rect x="28" y="30" width="632" height="296" rx="12" fill="url(#fondo-identidad)" stroke="#49303C" stroke-opacity=".5"/>
 <g clip-path="url(#panel-identidad)"><g class="gradiente-movil"><rect class="luz-compartida" x="-72" y="-30" width="832" height="416" fill="url(#luz-identidad)"/></g></g>
 <rect x="1" y="1" width="1198" height="358" rx="15" fill="url(#cuadricula)" stroke="#302431"/>
+
+<g id="particulas" aria-hidden="true" clip-path="url(#borde-particulas)">
+<g class="trayectoria trayectoria-0" opacity="0">
+<path d="M-24.00 -0.12L0 0" fill="none" stroke="#F6DEA4" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
+<circle r="2" fill="#F6DEA4"/>
+</g>
+<g class="trayectoria trayectoria-1" opacity="0">
+<path d="M24.00 -0.22L0 0" fill="none" stroke="#F3761B" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
+<circle r="2.2" fill="#F3761B"/>
+</g>
+<g class="trayectoria trayectoria-2" opacity="0">
+<path d="M-23.22 -6.06L0 0" fill="none" stroke="#F6DEA4" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
+<circle r="1.8" fill="#F6DEA4"/>
+</g>
+<g class="trayectoria trayectoria-3" opacity="0">
+<path d="M12.56 -20.45L0 0" fill="none" stroke="#F3761B" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
+<circle r="2" fill="#F3761B"/>
+</g>
+<g class="diagonal-protegida" mask="url(#proteccion-particulas)">
+<g class="trayectoria trayectoria-4" opacity="0">
+<path d="M-23.12 6.44L0 0" fill="none" stroke="#F6DEA4" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
+<circle r="1.8" fill="#F6DEA4"/>
+</g>
+</g>
+<g class="diagonal-protegida" mask="url(#proteccion-particulas)">
+<g class="trayectoria trayectoria-5" opacity="0">
+<path d="M-23.12 -6.44L0 0" fill="none" stroke="#F3761B" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
+<circle r="2" fill="#F3761B"/>
+</g>
+</g>
+<g class="diagonal-protegida" mask="url(#proteccion-particulas)">
+<g class="trayectoria trayectoria-6" opacity="0">
+<path d="M23.54 -4.69L0 0" fill="none" stroke="#F6DEA4" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
+<circle r="1.8" fill="#F6DEA4"/>
+</g>
+</g>
+<g class="particulas-estaticas" opacity=".32">
+<g transform="translate(339.0 73.5)">
+<path d="M-24.00 -0.12L0 0" fill="none" stroke="#F6DEA4" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
+<circle r="2" fill="#F6DEA4"/>
+</g>
+<g transform="translate(907.0 144.0)">
+<path d="M-23.22 -6.06L0 0" fill="none" stroke="#F6DEA4" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
+<circle r="1.8" fill="#F6DEA4"/>
+</g>
+</g></g>
+
 <path d="M64 56H102" stroke="#F3761B" stroke-width="2"/>
 <text x="114" y="60" class="mono secundario" font-size="11" letter-spacing="2">COMPUTATION / PHYSICS</text>
 <text x="64" y="135" font-size="49" font-weight="600" letter-spacing="-1.5">Owen A. Hurtado</text>
