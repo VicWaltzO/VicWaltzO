@@ -50,47 +50,47 @@
 
 <g id="particulas" aria-hidden="true" clip-path="url(#borde-particulas)">
 <g class="trayectoria trayectoria-0" opacity="0">
-<path d="M-24.00 -0.12L0 0" fill="none" stroke="#F6DEA4" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
-<circle r="2" fill="#F6DEA4"/>
+<path d="M-36.00 0.00L0 0" fill="none" stroke="#F6DEA4" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.8" fill="#F6DEA4"/>
 </g>
 <g class="trayectoria trayectoria-1" opacity="0">
-<path d="M24.00 -0.22L0 0" fill="none" stroke="#F3761B" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
-<circle r="2.2" fill="#F3761B"/>
+<path d="M36.00 -0.32L0 0" fill="none" stroke="#F3761B" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.8" fill="#F3761B"/>
 </g>
 <g class="trayectoria trayectoria-2" opacity="0">
-<path d="M-23.22 -6.06L0 0" fill="none" stroke="#F6DEA4" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
-<circle r="1.8" fill="#F6DEA4"/>
+<path d="M-34.83 -9.09L0 0" fill="none" stroke="#F6DEA4" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.6" fill="#F6DEA4"/>
 </g>
 <g class="trayectoria trayectoria-3" opacity="0">
-<path d="M12.56 -20.45L0 0" fill="none" stroke="#F3761B" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
-<circle r="2" fill="#F3761B"/>
+<path d="M18.84 -30.68L0 0" fill="none" stroke="#F3761B" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.6" fill="#F3761B"/>
 </g>
 <g class="diagonal-protegida" mask="url(#proteccion-particulas)">
 <g class="trayectoria trayectoria-4" opacity="0">
-<path d="M-23.12 6.44L0 0" fill="none" stroke="#F6DEA4" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
-<circle r="1.8" fill="#F6DEA4"/>
+<path d="M-34.68 9.65L0 0" fill="none" stroke="#F6DEA4" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.8" fill="#F6DEA4"/>
 </g>
 </g>
 <g class="diagonal-protegida" mask="url(#proteccion-particulas)">
 <g class="trayectoria trayectoria-5" opacity="0">
-<path d="M-23.12 -6.44L0 0" fill="none" stroke="#F3761B" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
-<circle r="2" fill="#F3761B"/>
+<path d="M-34.68 -9.65L0 0" fill="none" stroke="#F3761B" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.6" fill="#F3761B"/>
 </g>
 </g>
 <g class="diagonal-protegida" mask="url(#proteccion-particulas)">
 <g class="trayectoria trayectoria-6" opacity="0">
-<path d="M23.54 -4.69L0 0" fill="none" stroke="#F6DEA4" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
-<circle r="1.8" fill="#F6DEA4"/>
+<path d="M35.31 -7.04L0 0" fill="none" stroke="#F6DEA4" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.8" fill="#F6DEA4"/>
 </g>
 </g>
-<g class="particulas-estaticas" opacity=".32">
-<g transform="translate(339.0 73.5)">
-<path d="M-24.00 -0.12L0 0" fill="none" stroke="#F6DEA4" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
-<circle r="2" fill="#F6DEA4"/>
+<g class="particulas-estaticas" opacity="0.42">
+<g transform="translate(339.0 72.0)">
+<path d="M-36.00 0.00L0 0" fill="none" stroke="#F6DEA4" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.8" fill="#F6DEA4"/>
 </g>
 <g transform="translate(907.0 144.0)">
-<path d="M-23.22 -6.06L0 0" fill="none" stroke="#F6DEA4" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
-<circle r="1.8" fill="#F6DEA4"/>
+<path d="M-34.83 -9.09L0 0" fill="none" stroke="#F6DEA4" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.6" fill="#F6DEA4"/>
 </g>
 </g></g>
 
