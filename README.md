@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/banner.svg" alt="Owen A. Hurtado | Physics Undergraduate and Scientific Computing; illustrative scalar field and orbital geometry" width="100%" />
+  <img src="./assets/banner.svg" alt="Owen A. Hurtado | Physics Undergraduate and Scientific Computing; Schwarzschild black hole spatial curvature, synchronized animated gradient and orbital geometry" width="100%" />
 </p>
 
 ## Hi there 👋
