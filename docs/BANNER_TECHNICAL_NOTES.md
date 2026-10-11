@@ -12,7 +12,8 @@ del generador. PERIODO_LUZ cambia conjuntamente el degradado y la iluminación
 de la malla. TIEMPO_FRASE controla cada frase; el ciclo completo dura cuatro
 veces ese valor. ESCALA_RADIAL y ESCALA_VERTICAL controlan la cámara.
 La lista `particulas` configura las posiciones, duración del cruce, periodo,
-retraso, color, opacidad y radio de cada trayectoria.
+retraso, color, opacidad y radio de cada trayectoria. `CICLO_PARTICULAS`,
+`LONGITUD_ESTELA`, `GROSOR_ESTELA` y `OPACIDAD_RESPALDO` reúnen los ajustes comunes.
 
 ## Campo gravitacional
 
@@ -57,32 +58,33 @@ Las PNG de revisión se generan desde esta alternativa estática.
 ## Partículas inspiradas en neutrinos
 
 Son una interpretación artística, no una simulación de propagación o detección.
-Siete puntos de radio 1.8–2.2 px y estelas de 24 px, grosor 0.7 px. Las cuatro
+Siete puntos de radio 3.6–3.8 px y estelas de 36 px, grosor 1.5 px. Las cuatro
 trayectorias iniciales cruzan corredores sin texto; una atraviesa la malla.
 Tres diagonales nuevas recorren la tarjeta completa y pasan detrás de máscaras
 fijas en las zonas de contenido. No se modifica el recorrido al ocultarse bajo
 nombre, terminal o fórmulas. El clip global contiene las estelas en el borde.
-Se usan naranja y amarillo pálido, con opacidades de 0.54–0.64; la estela aplica
-además una opacidad de 0.4.
+Se usan naranja y amarillo pálido, con opacidades de 0.84–0.86; la estela aplica
+además una opacidad de 0.6.
 
-Los cruces duran 0.85, 1.1, 1.3 y 1 segundo. Los ciclos duran 47, 61, 73 y 89
-segundos, con retrasos iniciales de 3, 16, 30 y 44 segundos. Las diagonales
-duran 1.15, 1.3 y 1.05 segundos, en ciclos de 107, 109 y 127 segundos y
-retrasos iniciales de 8, 23 y 38 segundos. Los keyframes
+Los cruces duran 1.15–1.5 segundos. Un ciclo de 28 segundos y desfases distintos
+producen inicios a los 0.6, 4.6, 9.1, 12.6, 17.6, 20.6 y 25.1 segundos.
+Los intervalos entre cruces son 4, 4.5, 3.5, 5, 3, 4.5 y 3.5 segundos, contando
+el paso al siguiente ciclo. No hay cruces móviles simultáneos. Los keyframes
 interpolan posiciones en línea recta, desvanecen los extremos y mantienen
 opacidad cero durante el resto del ciclo. La secuencia es determinista.
 
-Dos trazas muy discretas quedan congeladas en el estado base y la versión
-estática. Una animación mínima las oculta cuando funciona la versión animada.
-Si el renderizador reconoce `prefers-reduced-motion`, se detienen las
-animaciones y vuelven esas dos trazas. Se mantiene la alternativa SVG estática
+Dos trazas discretas quedan congeladas y visibles con opacidad 0.42 en el
+estado base, la versión animada y la versión estática. No dependen de que CSS
+reconozca o ejecute una animación. Si el renderizador reconoce
+`prefers-reduced-motion`, se detienen las animaciones y permanecen esas dos trazas.
+Se mantiene la alternativa SVG estática
 para los renderizadores que no transmiten la preferencia a una imagen SVG.
 
 ## Verificación
 
-XML validado al generar. Banner animado: 49,117 bytes, sin scripts,
+XML validado al generar. Banner animado revisado: 48,993 bytes, sin scripts,
 foreignObject, fuentes externas ni rasterizados. Vista como img probada en
-Microsoft Edge / Chromium 155.0.4283.45. Se revisan PNG a 1200, 800 y 600 px,
+Microsoft Edge / Chromium 155.0.4283.45. Se revisan PNG a 1200, 800, 600 y 300 px,
 y capturas animadas a 2.4 y 8.1 segundos. Se comprueban las cuatro frases en sus
 intervalos de lectura, una de cada vez, y la primera frase sin animaciones.
 El README se revisa localmente con columnas de escritorio y móvil, en temas claro
@@ -99,8 +101,16 @@ cruce como imagen SVG a 1200 px y uno a 800/600 px. Las diagonales se revisan
 en 21 fotogramas frente a una base sin partículas para verificar que no cambian
 píxeles en las zonas protegidas; `scripts/check_particle_masks.py` usa Pillow
 solo para esa revisión local. El resultado se guarda en
-`docs/review/particulas/validacion.json` durante la revisión local. La publicación
-del banner, alternativa estática, generador y notas fue autorizada por el titular.
+`docs/review/visibilidad/validacion.json` durante esta revisión local. El primer
+cruce se capturó a 1.314 s en el SVG directo y a 1.384 s como imagen. La cadencia
+se comprobó durante una hora de secuencia determinista: intervalos de 3–5 s y
+máximo una partícula móvil. La publicación anterior de siete trayectorias fue
+autorizada; esta corrección de visibilidad se publicó después de recibir autorización
+expresa. Se verificaron tres posiciones sucesivas de una partícula en el README
+del perfil a 831 px y una aparición transitoria a 300 px. El README conserva
+su contenido; su imagen apunta al commit 00efc3609ea6e3f857d16ac9b51093231c42c51b
+para evitar reutilizar el recurso anterior. Futuras publicaciones del banner
+deben actualizar esta referencia al commit correspondiente.
 Las capturas y herramientas de revisión permanecen en el espacio de trabajo local.
 
 ## Corrección visual
