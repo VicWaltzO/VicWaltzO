@@ -1,134 +1,108 @@
-# Banner INFERNO
+# Banner INFERNO Scientific Identity
 
-Implementación para Owen A. Hurtado en el repositorio especial `VicWaltzO/VicWaltzO`.
-La versión 1.2 refina el banner y reemplaza el saludo genérico del README con una
-presentación y proyectos verificados, con autorización expresa del titular.
+Banner de Owen A. Hurtado para `VicWaltzO/VicWaltzO`: 1200 × 576 px,
+un 60% más alto que la revisión de 360 px. Conserva tipografía, paleta,
+terminal, ecuaciones y siete trayectorias. Se retiraron las dos partículas
+fijas que parecían detenidas a mitad del recorrido.
 
 ## Regeneración
 
-Desde la raíz: `python scripts/generate_banner.py`. Requiere Python 3, sin paquetes
-adicionales. FRASES, PALETA, RADIOS y los tamaños de etiquetas están al principio
-del generador. PERIODO_LUZ cambia conjuntamente el degradado y la iluminación
-de la malla. TIEMPO_FRASE controla cada frase; el ciclo completo dura cuatro
-veces ese valor. ESCALA_RADIAL y ESCALA_VERTICAL controlan la cámara.
-La lista `particulas` configura las posiciones, duración del cruce, periodo,
-retraso, color, opacidad y radio de cada trayectoria. `CICLO_PARTICULAS`,
-`LONGITUD_ESTELA`, `GROSOR_ESTELA` y `OPACIDAD_RESPALDO` reúnen los ajustes comunes.
+Ejecutar `python scripts/generate_banner.py`. Solo requiere Python 3.
+`ALTO_BANNER`, `DURACION_ROTACION`, `ESTADOS_ROTACION` y
+`PASOS_MERIDIANO` controlan altura y rotación. La lista `particulas`
+contiene posiciones, duración, retraso, color, opacidad y radio.
+El generador produce `assets/banner.svg` y `assets/banner-static.svg`.
 
-## Campo gravitacional
+## Geometría y rotación
 
-La visualización representa un corte ecuatorial espacial del exterior de un
-agujero negro de Schwarzschild: esférico, sin carga y sin rotación. Se usa el
-paraboloide de Flamm, z² = 4r_s(r−r_s), para r ≥ r_s. El radio del horizonte
-es r_s = 2GM/c². El cálculo usa r_s=1 y termina en r=4.8r_s. Se proyectan
-24 meridianos y nueve anillos con una cámara ortográfica inclinada; cada
-meridiano se muestrea uniformemente en z para resolver la pendiente del borde.
+Se representa la hoja exterior del paraboloide de Flamm:
+z² = 4r_s(r−r_s), con r_s=1 y 1 ≤ r/r_s ≤ 4.8.
+El horizonte cumple r_s = 2GM/c². Es una representación del corte
+ecuatorial espacial de Schwarzschild, no de una sombra ni de un disco de acreción.
 
-Es una representación de curvatura espacial, no una imagen de la sombra, un
-disco de acreción o una simulación de radiación. La altura z es una coordenada
-de embedding; no representa una dirección física de caída. Se muestra solamente
-la hoja exterior, sin añadir una segunda hoja o representar el interior del horizonte.
+Python calcula puntos `(r cos θ, r sin θ, 2√(r−1))`, aplica una matriz
+de rotación alrededor del eje z y los proyecta con una cámara ortográfica
+inclinada. Los 24 meridianos se muestrean con 33 puntos y 120 estados por vuelta.
+Una trayectoria CSS compartida anima sus coordenadas `d`, con desfases distintos.
+No se utiliza una rotación plana del grupo SVG.
 
-Referencias del modelo: [radio de Schwarzschild, Einstein Online](https://www.einstein-online.info/en/explandict/schwarzschild-radius/),
-[geometría de Schwarzschild, JILA](https://jila.colorado.edu/~ajsh/bh/schwp.html) y
-[ecuación del paraboloide, Princeton / Journal of Mathematical Physics](https://cchyba.scholar.princeton.edu/sites/g/files/toruqf3881/files/cchyba/files/chyba_j.math_.phys_.1982_0.pdf).
+Cada meridiano completa 360° en **30 segundos**, con velocidad angular uniforme
+y repetición infinita. Los extremos del ciclo reutilizan exactamente el mismo
+estado. Un meridiano naranja destacado permite seguir una vuelta completa.
+La opacidad se calcula mediante la normal de la superficie y una luz direccional.
+Los nueve anillos, el horizonte y las ecuaciones permanecen fijos. La silueta
+conserva su forma porque la superficie es axialmente simétrica.
 
-## Animación y alternativas
+La rotación pertenece a la visualización; el modelo sigue siendo un agujero negro
+de Schwarzschild sin rotación física. Entre estados, la interpolación lineal
+aproxima los arcos con un error proyectado máximo de 0.067 px. La discretización
+radial aporta menos de 0.038 px, además del redondeo de coordenadas a 0.1 px.
 
-La geometría gravitacional permanece fija, como corresponde al modelo estático.
-CSS integrado anima la opacidad de la iluminación en un ciclo de 18 segundos,
-compartido entre los anillos interiores del campo y el degradado del nombre.
-El degradado se desplaza suavemente dentro de un clipPath; sus tonos negro,
-escarlata, naranja y amarillo mantienen el contraste del texto. Las animaciones
-originales pertenecen a tres familias: terminal, intensidad compartida y
-desplazamiento del degradado. La revisión con partículas añade siete
-trayectorias independientes, sin cambiar esas tres familias. Se retiraron
-previamente las trazas móviles del campo y la pequeña órbita.
-La terminal usa recorte escalonado, cuatro intervalos de seis segundos y cursor
-móvil; escribe durante 3.6 segundos y mantiene la frase unos 2.1 segundos.
-El SVG tiene un estado base con identidad, primera frase y malla visibles.
-Se corrigió la especificidad de `.frase.primero` para que la primera frase no
-desaparezca cuando el renderizador aplica CSS pero no ejecuta animaciones.
+Referencias: [Schwarzschild, JILA](https://jila.colorado.edu/~ajsh/bh/schwp.html),
+[paraboloide de Flamm, Princeton](https://cchyba.scholar.princeton.edu/sites/g/files/toruqf3881/files/cchyba/files/chyba_j.math_.phys_.1982_0.pdf).
 
-Incluye prefers-reduced-motion. En la prueba con SVG como imagen en Edge no se
-aplicó la preferencia emulada; por ello se entrega `assets/banner-static.svg`
-sin animaciones como alternativa explícita. Para usarla, cambiar el src del README.
-Las PNG de revisión se generan desde esta alternativa estática.
+## Animación y respaldo
 
-## Partículas inspiradas en neutrinos
+El SVG es autónomo: sin JavaScript, dependencias externas, fuentes remotas,
+foreignObject ni imágenes rasterizadas. Mide **94,391 bytes**.
+Se conservan el degradado y la iluminación ambiental de 18 segundos,
+así como las cuatro frases de la terminal en un ciclo de 24 segundos.
 
-Son una interpretación artística, no una simulación de propagación o detección.
-Siete puntos de radio 3.6–3.8 px y estelas de 36 px, grosor 1.5 px. Las cuatro
-trayectorias iniciales cruzan corredores sin texto; una atraviesa la malla.
-Tres diagonales nuevas recorren la tarjeta completa y pasan detrás de máscaras
-fijas en las zonas de contenido. No se modifica el recorrido al ocultarse bajo
-nombre, terminal o fórmulas. El clip global contiene las estelas en el borde.
-Se usan naranja y amarillo pálido, con opacidades de 0.84–0.86; la estela aplica
-además una opacidad de 0.6.
+La animación CSS de `d` tiene compatibilidad limitada entre navegadores.
+Se comprobó en Edge/Chromium 155 como SVG directo y como imagen `img`.
+Los atributos `d` contienen una malla estática legible cuando no se admiten
+las animaciones. No se afirma compatibilidad universal.
+[Documentación de la propiedad d, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/d).
 
-Los cruces duran 1.15–1.5 segundos. Un ciclo de 28 segundos y desfases distintos
-producen inicios a los 0.6, 4.6, 9.1, 12.6, 17.6, 20.6 y 25.1 segundos.
-Los intervalos entre cruces son 4, 4.5, 3.5, 5, 3, 4.5 y 3.5 segundos, contando
-el paso al siguiente ciclo. No hay cruces móviles simultáneos. Los keyframes
-interpolan posiciones en línea recta, desvanecen los extremos y mantienen
-opacidad cero durante el resto del ciclo. La secuencia es determinista.
+`prefers-reduced-motion` detiene las animaciones cuando el renderizador transmite
+la preferencia al SVG. En algunos contextos de imagen no se propaga; por eso
+se incluye `assets/banner-static.svg`, sin animaciones. Para usarlo en el README,
+cambiar el recurso de la imagen a esa alternativa.
 
-Dos trazas discretas quedan congeladas y visibles con opacidad 0.42 en el
-estado base, la versión animada y la versión estática. No dependen de que CSS
-reconozca o ejecute una animación. Si el renderizador reconoce
-`prefers-reduced-motion`, se detienen las animaciones y permanecen esas dos trazas.
-Se mantiene la alternativa SVG estática
-para los renderizadores que no transmiten la preferencia a una imagen SVG.
+## Partículas
+
+Interpretación artística de neutrinos, no una simulación física. Siete puntos
+de radio 3.6–3.8 px, estelas de 36 px y grosor 1.5 px; colores naranja y amarillo
+pálido, opacidades 0.84–0.86. Tres diagonales atraviesan toda la tarjeta y pasan
+detrás de máscaras que protegen el nombre, la terminal y las ecuaciones.
+
+Los cruces duran 1.15–1.5 segundos. El ciclo determinista de 28 segundos inicia
+cruces en 0.6, 4.6, 9.1, 12.6, 17.6, 20.6 y 25.1 segundos. Hay intervalos de
+3–5 segundos entre inicios y como máximo una partícula móvil simultánea.
+Fuera del cruce permanecen ocultas. El respaldo estático mantiene la identidad
+sin puntos detenidos en las trayectorias.
 
 ## Verificación
 
-XML validado al generar. Banner animado revisado: 48,993 bytes, sin scripts,
-foreignObject, fuentes externas ni rasterizados. Vista como img probada en
-Microsoft Edge / Chromium 155.0.4283.45. Se revisan PNG a 1200, 800, 600 y 300 px,
-y capturas animadas a 2.4 y 8.1 segundos. Se comprueban las cuatro frases en sus
-intervalos de lectura, una de cada vez, y la primera frase sin animaciones.
-El README se revisa localmente con columnas de escritorio y móvil, en temas claro
-y oscuro. Estas capturas aproximan GitHub; no prueban su tema claro real.
-Las microetiquetas siguen siendo secundarias y pequeñas en móvil; nombre,
-subtítulo, terminal y geometría tienen prioridad. El cirílico aparece una vez.
+Se validan XML, conservación de r y z bajo rotación, ecuación de Flamm,
+duración de 30 segundos, cierre idéntico y cuatro orientaciones distintas.
+Las pruebas del navegador comprueban ecuaciones inmóviles, ausencia de
+transformaciones planas y un desplazamiento inferior a 0.03 px al atravesar
+el reinicio del ciclo. La comparación como `img` muestra movimiento de la malla
+sin cambios en el panel izquierdo ni en las ecuaciones.
 
-Las capturas se prepararon con Playwright, Marked y Edge en el entorno local.
-Estas herramientas son de revisión; el banner y el generador no dependen de ellas.
-La revisión de partículas usa `scripts/preview_particulas.cjs`: comprueba el
-recorrido completo contra las cajas tipográficas, desaparición durante las
-pausas, estados estáticos y movimiento reducido con SVG integrado. Captura cada
-cruce como imagen SVG a 1200 px y uno a 800/600 px. Las diagonales se revisan
-en 21 fotogramas frente a una base sin partículas para verificar que no cambian
-píxeles en las zonas protegidas; `scripts/check_particle_masks.py` usa Pillow
-solo para esa revisión local. El resultado se guarda en
-`docs/review/visibilidad/validacion.json` durante esta revisión local. El primer
-cruce se capturó a 1.314 s en el SVG directo y a 1.384 s como imagen. La cadencia
-se comprobó durante una hora de secuencia determinista: intervalos de 3–5 s y
-máximo una partícula móvil. La publicación anterior de siete trayectorias fue
-autorizada; esta corrección de visibilidad se publicó después de recibir autorización
-expresa. Se verificaron tres posiciones sucesivas de una partícula en el README
-del perfil a 831 px y una aparición transitoria a 300 px. El README conserva
-su contenido; su imagen apunta al commit 00efc3609ea6e3f857d16ac9b51093231c42c51b
-para evitar reutilizar el recurso anterior. Futuras publicaciones del banner
-deben actualizar esta referencia al commit correspondiente.
-Las capturas y herramientas de revisión permanecen en el espacio de trabajo local.
+Se verifican las siete partículas, las cuatro frases, movimiento reducido
+y primer cruce visible antes de dos segundos, tanto directo como imagen.
+En 21 fotogramas diagonales no hay cambios de píxeles en las zonas protegidas;
+11 muestran la partícula en espacios libres. Las capturas y herramientas de
+revisión permanecen locales en `docs/review/rotacion`.
 
-## Corrección visual
+El README conserva su contenido y fija el recurso animado al commit de su
+publicación para evitar reutilizar una imagen anterior en caché. Cada actualización
+del banner debe actualizar esa referencia.
 
-Las ecuaciones usan texto SVG con tipografía matemática de sistema, exponentes
-y subíndices con tspan, y una fracción con barra vectorial y posiciones explícitas.
-Así conservan la composición matemática en un img sin depender de LaTeX o MathJax.
+Publicación autorizada: recurso fijado al commit
+`cd20449152c6e00ac94ff16da23da7be83bc8083`; README actualizado en
+`6f72099a97500d3c6784420c8911034c1d2686b5`. Se verificó el perfil real
+con una imagen natural de 1200 × 576 px, mostrada a 831 px. Cien capturas
+durante 31.5 segundos muestran el meridiano destacado en distintas orientaciones.
+Cuatro capturas consecutivas muestran una partícula que avanza de x=451 a x=718
+en la captura, con desaparición fuera del cruce. El SVG abierto directamente
+también cambia su trayectoria y luz, declara 30 s y mantiene transform:none.
+Los archivos publicados coinciden exactamente con los artefactos comprobados.
+La imagen del perfil usa el nuevo commit, sin reutilizar el recurso anterior.
+La verificación se realizó en el navegador Chromium disponible; otros motores
+pueden utilizar el respaldo estático si no admiten CSS d.
 
-## Decisiones v1.2
-
-Se comparó la versión anterior con órbita y la versión refinada sin órbita a 600 px.
-Se eligió la segunda para dejar aire a las fórmulas y evitar un motivo sin relación
-con el corte de Schwarzschild. Las etiquetas pasan de 10–11 a 13–14 px, la firma
-de 12 a 15 px y las fórmulas principales de 21–23 a 25–26 px. El gris secundario
-se aclara a #C2B6C4. Los anillos exteriores usan púrpura/escarlata; el amarillo
-se concentra junto al horizonte. El líder apunta al borde exacto r=r_s.
-
-NutrequinePro se presenta como software administrativo según su README técnico:
-https://github.com/VicWaltzO/NutrequinePro/blob/main/app/README.md.
-data-analysis-journey se enlaza como diario inicial de aprendizaje según README
-y learning-log.md; no se presenta como un análisis científico terminado.
+Las ecuaciones usan texto y trazos SVG nativos, con exponentes, subíndices
+y fracción vectorial; no dependen de LaTeX ni de MathJax.
