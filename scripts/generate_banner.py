@@ -13,6 +13,7 @@ PALETA = {
     'escarlata': '#B63632',
     'naranja': '#F3761B',
     'amarillo': '#F6D746',
+    'amarillo_palido': '#F6DEA4',
     'texto': '#F2EEE9',
     'secundario': '#C2B6C4',
     'panel_inicio': '#25131B',
@@ -37,6 +38,40 @@ TAMANO_FIRMA = 15
 RADIOS = [1.04, 1.12, 1.3, 1.6, 2, 2.5, 3.1, 3.9, 4.8]
 ESCALA_RADIAL = 30
 ESCALA_VERTICAL = 10
+# Secuencia determinista: cada cruce es breve y cada trayectoria tiene su propio ciclo.
+particulas = [
+    {'posicion_inicial': (44, 72), 'posicion_final': (634, 75),
+     'duracion': .85, 'periodo': 47, 'retraso': 3,
+     'color': 'amarillo_palido', 'opacidad': .62, 'radio': 2},
+    {'posicion_inicial': (624, 275), 'posicion_final': (70, 280),
+     'duracion': 1.1, 'periodo': 61, 'retraso': 16,
+     'color': 'naranja', 'opacidad': .64, 'radio': 2.2},
+    {'posicion_inicial': (746, 102), 'posicion_final': (1068, 186),
+     'duracion': 1.3, 'periodo': 73, 'retraso': 30,
+     'color': 'amarillo_palido', 'opacidad': .58, 'radio': 1.8},
+    {'posicion_inicial': (1162, 88), 'posicion_final': (1092, 202),
+     'duracion': 1, 'periodo': 89, 'retraso': 44,
+     'color': 'naranja', 'opacidad': .62, 'radio': 2},
+    {'posicion_inicial': (18, 342), 'posicion_final': (1182, 18),
+     'duracion': 1.15, 'periodo': 107, 'retraso': 8,
+     'color': 'amarillo_palido', 'opacidad': .56, 'radio': 1.8, 'diagonal': True},
+    {'posicion_inicial': (18, 18), 'posicion_final': (1182, 342),
+     'duracion': 1.3, 'periodo': 109, 'retraso': 23,
+     'color': 'naranja', 'opacidad': .54, 'radio': 2, 'diagonal': True},
+    {'posicion_inicial': (1182, 74), 'posicion_final': (18, 306),
+     'duracion': 1.05, 'periodo': 127, 'retraso': 38,
+     'color': 'amarillo_palido', 'opacidad': .58, 'radio': 1.8, 'diagonal': True},
+]
+# x, y, ancho, alto. Las diagonales pasan detrás de estas zonas de contenido.
+zonas_protegidas = [
+    (108, 41, 300, 26),   # Encabezado izquierdo.
+    (54, 78, 590, 108),  # Nombre y subtítulo, incluyendo margen tipográfico.
+    (58, 198, 582, 60),  # Terminal completo, cursor incluido.
+    (58, 284, 452, 29),  # Pie izquierdo.
+    (714, 41, 344, 28),  # Encabezado derecho.
+    (982, 207, 175, 47), # Etiquetas del horizonte.
+    (710, 230, 452, 114), # Ecuaciones, dominio y firma.
+]
 
 
 def proyectar_curvatura(radio, angulo):
@@ -67,6 +102,89 @@ def crear_estilo_base():
     .detalle {{font-size:{TAMANO_DETALLE}px}}
     .firma {{font-size:{TAMANO_FIRMA}px}}
     '''
+
+
+def crear_estilos_particulas():
+    """Un cruce lineal por ciclo; el resto del tiempo el grupo es invisible."""
+    estilos = ['''
+    .particulas-estaticas {animation:ocultar-particulas .001s steps(1,end) forwards}
+    @keyframes ocultar-particulas {0%,100%{opacity:0}}
+    ''']
+    for indice, trayectoria in enumerate(particulas):
+        posicion_inicial = trayectoria['posicion_inicial']
+        posicion_final = trayectoria['posicion_final']
+        duracion = trayectoria['duracion']
+        retraso = trayectoria['retraso']
+        periodo = trayectoria['periodo']
+        opacidad = trayectoria['opacidad']
+        # Los porcentajes acotan la aparición, no la duración total del ciclo.
+        aparicion = 100 * duracion * .1 / periodo
+        desaparicion = 100 * duracion * .9 / periodo
+        final = 100 * duracion / periodo
+        inicio = f'translate({posicion_inicial[0]}px,{posicion_inicial[1]}px)'
+        destino = f'translate({posicion_final[0]}px,{posicion_final[1]}px)'
+        estilos.append(f'''
+    .trayectoria-{indice} {{animation:cruzar-{indice} {periodo}s linear {retraso}s infinite}}
+    @keyframes cruzar-{indice} {{
+      0% {{transform:{inicio};opacity:0}}
+      {aparicion:.6f}% {{opacity:{opacidad}}}
+      {desaparicion:.6f}% {{opacity:{opacidad}}}
+      {final:.6f}% {{transform:{destino};opacity:0}}
+      100% {{transform:{destino};opacity:0}}
+    }}''')
+    return '\n'.join(estilos)
+
+
+def dibujar_particula(trayectoria):
+    """Punto y estela locales; la transformación coloca y mueve el grupo."""
+    posicion_inicial = trayectoria['posicion_inicial']
+    posicion_final = trayectoria['posicion_final']
+    diferencia_x = posicion_final[0] - posicion_inicial[0]
+    diferencia_y = posicion_final[1] - posicion_inicial[1]
+    longitud = sqrt(diferencia_x**2 + diferencia_y**2)
+    cola_x = -24 * diferencia_x / longitud
+    cola_y = -24 * diferencia_y / longitud
+    color = PALETA[trayectoria['color']]
+    radio = trayectoria['radio']
+    return f'''<path d="M{cola_x:.2f} {cola_y:.2f}L0 0" fill="none" stroke="{color}" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
+<circle r="{radio}" fill="{color}"/>'''
+
+
+def generar_particulas():
+    """Las diagonales recorren la tarjeta y quedan ocultas detrás del contenido."""
+    partes = ['<g id="particulas" aria-hidden="true" clip-path="url(#borde-particulas)">']
+    for indice, trayectoria in enumerate(particulas):
+        if trayectoria.get('diagonal'):
+            partes.append('<g class="diagonal-protegida" mask="url(#proteccion-particulas)">')
+        partes.append(f'<g class="trayectoria trayectoria-{indice}" opacity="0">')
+        partes.append(dibujar_particula(trayectoria))
+        partes.append('</g>')
+        if trayectoria.get('diagonal'):
+            partes.append('</g>')
+    # Base legible cuando las animaciones no se ejecutan: dos trazas congeladas.
+    partes.append('<g class="particulas-estaticas" opacity=".32">')
+    for indice in (0, 2):
+        trayectoria = particulas[indice]
+        posicion_inicial = trayectoria['posicion_inicial']
+        posicion_final = trayectoria['posicion_final']
+        x = (posicion_inicial[0] + posicion_final[0]) / 2
+        y = (posicion_inicial[1] + posicion_final[1]) / 2
+        partes.append(f'<g transform="translate({x} {y})">')
+        partes.append(dibujar_particula(trayectoria))
+        partes.append('</g>')
+    partes.append('</g></g>')
+    return '\n'.join(partes)
+
+
+def generar_proteccion_particulas():
+    """Máscara fija sobre texto; no transforma ni acorta los recorridos."""
+    partes = ['''<clipPath id="borde-particulas"><rect x="2" y="2" width="1196" height="356" rx="14"/></clipPath>
+<mask id="proteccion-particulas" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="0" y="0" width="1200" height="360">
+<rect width="1200" height="360" fill="white"/>''']
+    for x, y, ancho, alto in zonas_protegidas:
+        partes.append(f'<rect x="{x}" y="{y}" width="{ancho}" height="{alto}" fill="black"/>')
+    partes.append('</mask>')
+    return '\n'.join(partes)
 
 
 def generar_malla():
@@ -131,14 +249,18 @@ def construir_svg():
       .primero {opacity:1!important}
       .recorte {width:var(--ancho)}
       .avance {transform:translateX(var(--ancho))}
+      .trayectoria,.particulas-estaticas {animation:none!important}
+      .trayectoria {opacity:0!important}
+      .particulas-estaticas {opacity:.32!important}
     }
     '''
     estilos = estilos.replace('18s', f'{PERIODO_LUZ}s')
     estilos = estilos.replace('24s', f'{len(FRASES)*TIEMPO_FRASE}s')
     estilos = estilos.replace('6s', f'{TIEMPO_FRASE}s')
+    estilos += crear_estilos_particulas()
     partes = [f'''<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="titulo descripcion">
 <title id="titulo">Owen A. Hurtado | Scientific Computing</title>
-<desc id="descripcion">Physics undergraduate exploring computation, numerical methods and astrophysics. The Flamm paraboloid represents an equatorial spatial slice outside a Schwarzschild black hole's event horizon. The surface is stationary, with synchronized decorative lighting.</desc>
+<desc id="descripcion">Physics undergraduate exploring computation, numerical methods and astrophysics. The Flamm paraboloid represents an equatorial spatial slice outside a Schwarzschild black hole's event horizon. The surface is stationary, with synchronized decorative lighting. Occasional straight particle trails are an artistic interpretation inspired by neutrinos; their timing is deterministic.</desc>
 <style>{estilos}</style>
 <defs>
 <linearGradient id="fondo-identidad" x1="0" y1="0" x2="1" y2="1">
@@ -154,6 +276,7 @@ def construir_svg():
 </radialGradient>
 <clipPath id="panel-identidad"><rect x="28" y="30" width="632" height="296" rx="12"/></clipPath>
 <pattern id="cuadricula" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="__secundario__" stroke-opacity=".055"/></pattern>''']
+    partes.append(generar_proteccion_particulas())
     for indice, frase in enumerate(FRASES):
         ancho = len(frase)*11.3
         partes.append(f'<clipPath id="texto-{indice}"><rect class="recorte" x="82" y="211" width="{ancho}" height="29" style="--ancho:{ancho}px;--letras:{len(frase)}"/></clipPath>')
@@ -162,6 +285,9 @@ def construir_svg():
 <rect x="28" y="30" width="632" height="296" rx="12" fill="url(#fondo-identidad)" stroke="__borde_panel__" stroke-opacity=".5"/>
 <g clip-path="url(#panel-identidad)"><g class="gradiente-movil"><rect class="luz-compartida" x="-72" y="-30" width="832" height="416" fill="url(#luz-identidad)"/></g></g>
 <rect x="1" y="1" width="1198" height="358" rx="15" fill="url(#cuadricula)" stroke="__borde__"/>
+''')
+    partes.append(generar_particulas())
+    partes.append('''
 <path d="M64 56H102" stroke="__naranja__" stroke-width="2"/>
 <text x="114" y="60" class="mono secundario" font-size="11" letter-spacing="2">COMPUTATION / PHYSICS</text>
 <text x="64" y="135" font-size="49" font-weight="600" letter-spacing="-1.5">Owen A. Hurtado</text>
