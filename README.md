@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/banner.svg" alt="Owen A. Hurtado | Physics Undergraduate and Scientific Computing; illustrative scalar field and orbital geometry" width="100%" />
+</p>
+
 ## Hi there 👋
 
 <!--
