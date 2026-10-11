@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/banner.svg?v=neutrinos-visible-3" alt="Owen A. Hurtado | Physics Undergraduate and Scientific Computing; Flamm paraboloid showing Schwarzschild spatial curvature, synchronized decorative lighting, and seven occasional neutrino-inspired particle trajectories" width="100%" />
+  <img src="https://raw.githubusercontent.com/VicWaltzO/VicWaltzO/00efc3609ea6e3f857d16ac9b51093231c42c51b/assets/banner.svg" alt="Owen A. Hurtado | Physics Undergraduate and Scientific Computing; Flamm paraboloid showing Schwarzschild spatial curvature, synchronized decorative lighting, and seven occasional neutrino-inspired particle trajectories" width="100%" />
 </p>
 
 ## About
