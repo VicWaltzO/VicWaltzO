@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="titulo descripcion">
 <title id="titulo">Owen A. Hurtado | Scientific Computing</title>
-<desc id="descripcion">Physics undergraduate exploring computation, numerical methods and astrophysics. The Flamm paraboloid represents an equatorial spatial slice outside a Schwarzschild black hole's event horizon. The surface is stationary, with synchronized decorative lighting.</desc>
+<desc id="descripcion">Physics undergraduate exploring computation, numerical methods and astrophysics. The Flamm paraboloid represents an equatorial spatial slice outside a Schwarzschild black hole's event horizon. The surface is stationary, with synchronized decorative lighting. Occasional straight particle trails are an artistic interpretation inspired by neutrinos; their timing is deterministic.</desc>
 <style>
     text {font-family:'Segoe UI',Arial,sans-serif;fill:#F2EEE9}
     .mono {font-family:Consolas,'DejaVu Sans Mono',monospace}
@@ -28,8 +28,77 @@
       .primero {opacity:1!important}
       .recorte {width:var(--ancho)}
       .avance {transform:translateX(var(--ancho))}
+      .trayectoria,.particulas-estaticas {animation:none!important}
+      .trayectoria {opacity:0!important}
+      .particulas-estaticas {opacity:.32!important}
     }
-    </style>
+    
+    .particulas-estaticas {animation:ocultar-particulas .001s steps(1,end) forwards}
+    @keyframes ocultar-particulas {0%,100%{opacity:0}}
+    
+
+    .trayectoria-0 {animation:cruzar-0 47s linear 3s infinite}
+    @keyframes cruzar-0 {
+      0% {transform:translate(44px,72px);opacity:0}
+      0.180851% {opacity:0.62}
+      1.627660% {opacity:0.62}
+      1.808511% {transform:translate(634px,75px);opacity:0}
+      100% {transform:translate(634px,75px);opacity:0}
+    }
+
+    .trayectoria-1 {animation:cruzar-1 61s linear 16s infinite}
+    @keyframes cruzar-1 {
+      0% {transform:translate(624px,275px);opacity:0}
+      0.180328% {opacity:0.64}
+      1.622951% {opacity:0.64}
+      1.803279% {transform:translate(70px,280px);opacity:0}
+      100% {transform:translate(70px,280px);opacity:0}
+    }
+
+    .trayectoria-2 {animation:cruzar-2 73s linear 30s infinite}
+    @keyframes cruzar-2 {
+      0% {transform:translate(746px,102px);opacity:0}
+      0.178082% {opacity:0.58}
+      1.602740% {opacity:0.58}
+      1.780822% {transform:translate(1068px,186px);opacity:0}
+      100% {transform:translate(1068px,186px);opacity:0}
+    }
+
+    .trayectoria-3 {animation:cruzar-3 89s linear 44s infinite}
+    @keyframes cruzar-3 {
+      0% {transform:translate(1162px,88px);opacity:0}
+      0.112360% {opacity:0.62}
+      1.011236% {opacity:0.62}
+      1.123596% {transform:translate(1092px,202px);opacity:0}
+      100% {transform:translate(1092px,202px);opacity:0}
+    }
+
+    .trayectoria-4 {animation:cruzar-4 107s linear 8s infinite}
+    @keyframes cruzar-4 {
+      0% {transform:translate(18px,342px);opacity:0}
+      0.107477% {opacity:0.56}
+      0.967290% {opacity:0.56}
+      1.074766% {transform:translate(1182px,18px);opacity:0}
+      100% {transform:translate(1182px,18px);opacity:0}
+    }
+
+    .trayectoria-5 {animation:cruzar-5 109s linear 23s infinite}
+    @keyframes cruzar-5 {
+      0% {transform:translate(18px,18px);opacity:0}
+      0.119266% {opacity:0.54}
+      1.073394% {opacity:0.54}
+      1.192661% {transform:translate(1182px,342px);opacity:0}
+      100% {transform:translate(1182px,342px);opacity:0}
+    }
+
+    .trayectoria-6 {animation:cruzar-6 127s linear 38s infinite}
+    @keyframes cruzar-6 {
+      0% {transform:translate(1182px,74px);opacity:0}
+      0.082677% {opacity:0.58}
+      0.744094% {opacity:0.58}
+      0.826772% {transform:translate(18px,306px);opacity:0}
+      100% {transform:translate(18px,306px);opacity:0}
+    }</style>
 <defs>
 <linearGradient id="fondo-identidad" x1="0" y1="0" x2="1" y2="1">
 <stop offset="0" stop-color="#25131B"/>
@@ -44,6 +113,17 @@
 </radialGradient>
 <clipPath id="panel-identidad"><rect x="28" y="30" width="632" height="296" rx="12"/></clipPath>
 <pattern id="cuadricula" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#C2B6C4" stroke-opacity=".055"/></pattern>
+<clipPath id="borde-particulas"><rect x="2" y="2" width="1196" height="356" rx="14"/></clipPath>
+<mask id="proteccion-particulas" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="0" y="0" width="1200" height="360">
+<rect width="1200" height="360" fill="white"/>
+<rect x="108" y="41" width="300" height="26" fill="black"/>
+<rect x="54" y="78" width="590" height="108" fill="black"/>
+<rect x="58" y="198" width="582" height="60" fill="black"/>
+<rect x="58" y="284" width="452" height="29" fill="black"/>
+<rect x="714" y="41" width="344" height="28" fill="black"/>
+<rect x="982" y="207" width="175" height="47" fill="black"/>
+<rect x="710" y="230" width="452" height="114" fill="black"/>
+</mask>
 <clipPath id="texto-0"><rect class="recorte" x="82" y="211" width="497.20000000000005" height="29" style="--ancho:497.20000000000005px;--letras:44"/></clipPath>
 <clipPath id="texto-1"><rect class="recorte" x="82" y="211" width="485.90000000000003" height="29" style="--ancho:485.90000000000003px;--letras:43"/></clipPath>
 <clipPath id="texto-2"><rect class="recorte" x="82" y="211" width="463.3" height="29" style="--ancho:463.3px;--letras:41"/></clipPath>
@@ -53,6 +133,53 @@
 <rect x="28" y="30" width="632" height="296" rx="12" fill="url(#fondo-identidad)" stroke="#49303C" stroke-opacity=".5"/>
 <g clip-path="url(#panel-identidad)"><g class="gradiente-movil"><rect class="luz-compartida" x="-72" y="-30" width="832" height="416" fill="url(#luz-identidad)"/></g></g>
 <rect x="1" y="1" width="1198" height="358" rx="15" fill="url(#cuadricula)" stroke="#302431"/>
+
+<g id="particulas" aria-hidden="true" clip-path="url(#borde-particulas)">
+<g class="trayectoria trayectoria-0" opacity="0">
+<path d="M-24.00 -0.12L0 0" fill="none" stroke="#F6DEA4" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
+<circle r="2" fill="#F6DEA4"/>
+</g>
+<g class="trayectoria trayectoria-1" opacity="0">
+<path d="M24.00 -0.22L0 0" fill="none" stroke="#F3761B" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
+<circle r="2.2" fill="#F3761B"/>
+</g>
+<g class="trayectoria trayectoria-2" opacity="0">
+<path d="M-23.22 -6.06L0 0" fill="none" stroke="#F6DEA4" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
+<circle r="1.8" fill="#F6DEA4"/>
+</g>
+<g class="trayectoria trayectoria-3" opacity="0">
+<path d="M12.56 -20.45L0 0" fill="none" stroke="#F3761B" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
+<circle r="2" fill="#F3761B"/>
+</g>
+<g class="diagonal-protegida" mask="url(#proteccion-particulas)">
+<g class="trayectoria trayectoria-4" opacity="0">
+<path d="M-23.12 6.44L0 0" fill="none" stroke="#F6DEA4" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
+<circle r="1.8" fill="#F6DEA4"/>
+</g>
+</g>
+<g class="diagonal-protegida" mask="url(#proteccion-particulas)">
+<g class="trayectoria trayectoria-5" opacity="0">
+<path d="M-23.12 -6.44L0 0" fill="none" stroke="#F3761B" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
+<circle r="2" fill="#F3761B"/>
+</g>
+</g>
+<g class="diagonal-protegida" mask="url(#proteccion-particulas)">
+<g class="trayectoria trayectoria-6" opacity="0">
+<path d="M23.54 -4.69L0 0" fill="none" stroke="#F6DEA4" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
+<circle r="1.8" fill="#F6DEA4"/>
+</g>
+</g>
+<g class="particulas-estaticas" opacity=".32">
+<g transform="translate(339.0 73.5)">
+<path d="M-24.00 -0.12L0 0" fill="none" stroke="#F6DEA4" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
+<circle r="2" fill="#F6DEA4"/>
+</g>
+<g transform="translate(907.0 144.0)">
+<path d="M-23.22 -6.06L0 0" fill="none" stroke="#F6DEA4" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
+<circle r="1.8" fill="#F6DEA4"/>
+</g>
+</g></g>
+
 <path d="M64 56H102" stroke="#F3761B" stroke-width="2"/>
 <text x="114" y="60" class="mono secundario" font-size="11" letter-spacing="2">COMPUTATION / PHYSICS</text>
 <text x="64" y="135" font-size="49" font-weight="600" letter-spacing="-1.5">Owen A. Hurtado</text>
