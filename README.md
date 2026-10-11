@@ -1,20 +1,21 @@
 <p align="center">
-  <img src="./assets/banner.svg" alt="Owen A. Hurtado | Physics Undergraduate and Scientific Computing; Schwarzschild black hole spatial curvature, synchronized animated gradient and orbital geometry" width="100%" />
+  <img src="./assets/banner.svg" alt="Owen A. Hurtado | Physics Undergraduate and Scientific Computing; Flamm paraboloid showing Schwarzschild spatial curvature, with synchronized decorative lighting" width="100%" />
 </p>
 
-## Hi there 👋
+## About
 
-<!--
-**VicWaltzO/VicWaltzO** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+I'm a physics undergraduate interested in computational physics, astrophysics, and scientific data analysis. I enjoy learning how mathematical models and computational tools can help us understand physical systems. I also build software projects to learn through practice.
 
-Here are some ideas to get you started:
+## Scientific interests
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+- Computational physics and numerical methods
+- Astrophysics and physical modelling
+- Scientific data analysis
+
+## Selected projects
+
+- [NutrequinePro](https://github.com/VicWaltzO/NutrequinePro) — A web app for managing sales, production, inventory, payments, and expenses.
+
+## Currently exploring
+
+I'm building foundations in Git, GitHub, and data analysis. My [learning journal](https://github.com/VicWaltzO/data-analysis-journey) records these first steps as I work toward deeper study of computational physics and numerical methods.
