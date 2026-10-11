@@ -38,29 +38,34 @@ TAMANO_FIRMA = 15
 RADIOS = [1.04, 1.12, 1.3, 1.6, 2, 2.5, 3.1, 3.9, 4.8]
 ESCALA_RADIAL = 30
 ESCALA_VERTICAL = 10
-# Secuencia determinista: cada cruce es breve y cada trayectoria tiene su propio ciclo.
+CICLO_PARTICULAS = 28
+LONGITUD_ESTELA = 36
+GROSOR_ESTELA = 1.5
+OPACIDAD_RESPALDO = .42
+# Siete desfases, con huecos de 3–5 s. El ciclo común evita cruces simultáneos.
+# La secuencia es determinista; no representa aleatoriedad ni simulación física.
 particulas = [
-    {'posicion_inicial': (44, 72), 'posicion_final': (634, 75),
-     'duracion': .85, 'periodo': 47, 'retraso': 3,
-     'color': 'amarillo_palido', 'opacidad': .62, 'radio': 2},
+    {'posicion_inicial': (44, 72), 'posicion_final': (634, 72),
+     'duracion': 1.15, 'periodo': CICLO_PARTICULAS, 'retraso': .6,
+     'color': 'amarillo_palido', 'opacidad': .84, 'radio': 3.8},
     {'posicion_inicial': (624, 275), 'posicion_final': (70, 280),
-     'duracion': 1.1, 'periodo': 61, 'retraso': 16,
-     'color': 'naranja', 'opacidad': .64, 'radio': 2.2},
+     'duracion': 1.35, 'periodo': CICLO_PARTICULAS, 'retraso': 9.1,
+     'color': 'naranja', 'opacidad': .86, 'radio': 3.8},
     {'posicion_inicial': (746, 102), 'posicion_final': (1068, 186),
-     'duracion': 1.3, 'periodo': 73, 'retraso': 30,
-     'color': 'amarillo_palido', 'opacidad': .58, 'radio': 1.8},
+     'duracion': 1.4, 'periodo': CICLO_PARTICULAS, 'retraso': 4.6,
+     'color': 'amarillo_palido', 'opacidad': .84, 'radio': 3.6},
     {'posicion_inicial': (1162, 88), 'posicion_final': (1092, 202),
-     'duracion': 1, 'periodo': 89, 'retraso': 44,
-     'color': 'naranja', 'opacidad': .62, 'radio': 2},
+     'duracion': 1.25, 'periodo': CICLO_PARTICULAS, 'retraso': 17.6,
+     'color': 'naranja', 'opacidad': .85, 'radio': 3.6},
     {'posicion_inicial': (18, 342), 'posicion_final': (1182, 18),
-     'duracion': 1.15, 'periodo': 107, 'retraso': 8,
-     'color': 'amarillo_palido', 'opacidad': .56, 'radio': 1.8, 'diagonal': True},
+     'duracion': 1.5, 'periodo': CICLO_PARTICULAS, 'retraso': 12.6,
+     'color': 'amarillo_palido', 'opacidad': .86, 'radio': 3.8, 'diagonal': True},
     {'posicion_inicial': (18, 18), 'posicion_final': (1182, 342),
-     'duracion': 1.3, 'periodo': 109, 'retraso': 23,
-     'color': 'naranja', 'opacidad': .54, 'radio': 2, 'diagonal': True},
+     'duracion': 1.5, 'periodo': CICLO_PARTICULAS, 'retraso': 25.1,
+     'color': 'naranja', 'opacidad': .84, 'radio': 3.6, 'diagonal': True},
     {'posicion_inicial': (1182, 74), 'posicion_final': (18, 306),
-     'duracion': 1.05, 'periodo': 127, 'retraso': 38,
-     'color': 'amarillo_palido', 'opacidad': .58, 'radio': 1.8, 'diagonal': True},
+     'duracion': 1.45, 'periodo': CICLO_PARTICULAS, 'retraso': 20.6,
+     'color': 'amarillo_palido', 'opacidad': .85, 'radio': 3.8, 'diagonal': True},
 ]
 # x, y, ancho, alto. Las diagonales pasan detrás de estas zonas de contenido.
 zonas_protegidas = [
@@ -106,10 +111,7 @@ def crear_estilo_base():
 
 def crear_estilos_particulas():
     """Un cruce lineal por ciclo; el resto del tiempo el grupo es invisible."""
-    estilos = ['''
-    .particulas-estaticas {animation:ocultar-particulas .001s steps(1,end) forwards}
-    @keyframes ocultar-particulas {0%,100%{opacity:0}}
-    ''']
+    estilos = []
     for indice, trayectoria in enumerate(particulas):
         posicion_inicial = trayectoria['posicion_inicial']
         posicion_final = trayectoria['posicion_final']
@@ -142,11 +144,11 @@ def dibujar_particula(trayectoria):
     diferencia_x = posicion_final[0] - posicion_inicial[0]
     diferencia_y = posicion_final[1] - posicion_inicial[1]
     longitud = sqrt(diferencia_x**2 + diferencia_y**2)
-    cola_x = -24 * diferencia_x / longitud
-    cola_y = -24 * diferencia_y / longitud
+    cola_x = -LONGITUD_ESTELA * diferencia_x / longitud
+    cola_y = -LONGITUD_ESTELA * diferencia_y / longitud
     color = PALETA[trayectoria['color']]
     radio = trayectoria['radio']
-    return f'''<path d="M{cola_x:.2f} {cola_y:.2f}L0 0" fill="none" stroke="{color}" stroke-width=".7" stroke-opacity=".4" stroke-linecap="round"/>
+    return f'''<path d="M{cola_x:.2f} {cola_y:.2f}L0 0" fill="none" stroke="{color}" stroke-width="{GROSOR_ESTELA}" stroke-opacity=".6" stroke-linecap="round"/>
 <circle r="{radio}" fill="{color}"/>'''
 
 
@@ -161,8 +163,8 @@ def generar_particulas():
         partes.append('</g>')
         if trayectoria.get('diagonal'):
             partes.append('</g>')
-    # Base legible cuando las animaciones no se ejecutan: dos trazas congeladas.
-    partes.append('<g class="particulas-estaticas" opacity=".32">')
+    # Respaldo permanente: no se oculta aunque el navegador admita CSS sin animarlo.
+    partes.append(f'<g class="particulas-estaticas" opacity="{OPACIDAD_RESPALDO}">')
     for indice in (0, 2):
         trayectoria = particulas[indice]
         posicion_inicial = trayectoria['posicion_inicial']
@@ -251,7 +253,7 @@ def construir_svg():
       .avance {transform:translateX(var(--ancho))}
       .trayectoria,.particulas-estaticas {animation:none!important}
       .trayectoria {opacity:0!important}
-      .particulas-estaticas {opacity:.32!important}
+      .particulas-estaticas {opacity:.42!important}
     }
     '''
     estilos = estilos.replace('18s', f'{PERIODO_LUZ}s')
