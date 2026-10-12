@@ -1,7 +1,7 @@
 """Genera un banner SVG autónomo; solo requiere Python 3."""
 
 from pathlib import Path
-from math import cos, sin, pi, sqrt
+from math import cos, sin, pi, sqrt, atan2, degrees, radians
 from html import escape
 import xml.etree.ElementTree as ET
 
@@ -41,34 +41,61 @@ ESCALA_VERTICAL = 13.5
 CICLO_PARTICULAS = 28
 LONGITUD_ESTELA = 36
 GROSOR_ESTELA = 1.5
+RAPIDEZ_PARTICULAS = 1.3
+CENTRO_DESVIO = (915, 358.4)
+RADIO_DESVIO = 200
+ANCHO_DESVIO = 120
+ANGULO_DESVIO = 5
+PASOS_DESVIO = 64
+COLORES_PARTICULAS = {
+    'ambar': '#F5DDA7',
+    'melocoton': '#F2B48C',
+    'rosa': '#E5B4AC',
+    'malva': '#C6ADC8',
+    'crema': '#F4E7C7',
+}
 ALTO_BANNER = 576
 DURACION_ROTACION = 30
 ESTADOS_ROTACION = 120
 PASOS_MERIDIANO = 32
-# Siete desfases, con huecos de 3–5 s. El ciclo común evita cruces simultáneos.
+# Once desfases, con huecos de 2–3.5 s, sin cruces simultáneos.
 # La secuencia es determinista; no representa aleatoriedad ni simulación física.
+# Los extremos quedan fuera de la tarjeta para entrar y salir por sus bordes.
+# Duración / 1.3 equivale a un 30% más de velocidad para el recorrido completo.
 particulas = [
-    {'posicion_inicial': (44, 115), 'posicion_final': (634, 115),
-     'duracion': 1.15, 'periodo': CICLO_PARTICULAS, 'retraso': .6,
-     'color': 'amarillo_palido', 'opacidad': .84, 'radio': 3.8},
-    {'posicion_inicial': (624, 440), 'posicion_final': (70, 448),
-     'duracion': 1.35, 'periodo': CICLO_PARTICULAS, 'retraso': 9.1,
-     'color': 'naranja', 'opacidad': .86, 'radio': 3.8},
-    {'posicion_inicial': (746, 163), 'posicion_final': (1068, 298),
-     'duracion': 1.4, 'periodo': CICLO_PARTICULAS, 'retraso': 4.6,
-     'color': 'amarillo_palido', 'opacidad': .84, 'radio': 3.6},
-    {'posicion_inicial': (1162, 141), 'posicion_final': (1092, 323),
-     'duracion': 1.25, 'periodo': CICLO_PARTICULAS, 'retraso': 17.6,
-     'color': 'naranja', 'opacidad': .85, 'radio': 3.6},
-    {'posicion_inicial': (18, 558), 'posicion_final': (1182, 18),
-     'duracion': 1.5, 'periodo': CICLO_PARTICULAS, 'retraso': 12.6,
-     'color': 'amarillo_palido', 'opacidad': .86, 'radio': 3.8, 'diagonal': True},
-    {'posicion_inicial': (18, 18), 'posicion_final': (1182, 558),
-     'duracion': 1.5, 'periodo': CICLO_PARTICULAS, 'retraso': 25.1,
-     'color': 'naranja', 'opacidad': .84, 'radio': 3.6, 'diagonal': True},
-    {'posicion_inicial': (1182, 118), 'posicion_final': (18, 490),
-     'duracion': 1.45, 'periodo': CICLO_PARTICULAS, 'retraso': 20.6,
-     'color': 'amarillo_palido', 'opacidad': .85, 'radio': 3.8, 'diagonal': True},
+    {'posicion_inicial': (-48, 302), 'posicion_final': (1248, 205),
+     'duracion': 1.15 / RAPIDEZ_PARTICULAS, 'periodo': CICLO_PARTICULAS, 'retraso': .6,
+     'color': 'ambar', 'opacidad': .84, 'radio': 3.8, 'estela': 44, 'grosor': 1.5},
+    {'posicion_inicial': (1248, 215), 'posicion_final': (-48, 302),
+     'duracion': 1.35 / RAPIDEZ_PARTICULAS, 'periodo': CICLO_PARTICULAS, 'retraso': 9.1,
+     'color': 'melocoton', 'opacidad': .84, 'radio': 3.8, 'estela': 58, 'grosor': 1.6},
+    {'posicion_inicial': (-48, 248), 'posicion_final': (1248, 328),
+     'duracion': 1.4 / RAPIDEZ_PARTICULAS, 'periodo': CICLO_PARTICULAS, 'retraso': 4.6,
+     'color': 'crema', 'opacidad': .84, 'radio': 3.6, 'estela': 36, 'grosor': 1.4},
+    {'posicion_inicial': (1248, 270), 'posicion_final': (-48, 210),
+     'duracion': 1.25 / RAPIDEZ_PARTICULAS, 'periodo': CICLO_PARTICULAS, 'retraso': 17.6,
+     'color': 'malva', 'opacidad': .84, 'radio': 3.8, 'estela': 64, 'grosor': 1.5},
+    {'posicion_inicial': (-48, 599.04), 'posicion_final': (1248, -23.04), 'esquina': True,
+     'duracion': 1.5 / RAPIDEZ_PARTICULAS, 'periodo': CICLO_PARTICULAS, 'retraso': 12.6,
+     'color': 'rosa', 'opacidad': .84, 'radio': 3.8, 'estela': 48, 'grosor': 1.6},
+    {'posicion_inicial': (-48, -23.04), 'posicion_final': (1248, 599.04), 'esquina': True,
+     'duracion': 1.5 / RAPIDEZ_PARTICULAS, 'periodo': CICLO_PARTICULAS, 'retraso': 25.1,
+     'color': 'melocoton', 'opacidad': .84, 'radio': 3.6, 'estela': 70, 'grosor': 1.4},
+    {'posicion_inicial': (1248, 310), 'posicion_final': (-48, 282),
+     'duracion': 1.45 / RAPIDEZ_PARTICULAS, 'periodo': CICLO_PARTICULAS, 'retraso': 20.6,
+     'color': 'ambar', 'opacidad': .84, 'radio': 3.8, 'estela': 40, 'grosor': 1.6},
+    {'posicion_inicial': (1248, 599.04), 'posicion_final': (-48, -23.04), 'esquina': True,
+     'duracion': 1.5 / RAPIDEZ_PARTICULAS, 'periodo': CICLO_PARTICULAS, 'retraso': 2.6,
+     'color': 'malva', 'opacidad': .84, 'radio': 3.8, 'estela': 56, 'grosor': 1.4},
+    {'posicion_inicial': (1248, -23.04), 'posicion_final': (-48, 599.04), 'esquina': True,
+     'duracion': 1.5 / RAPIDEZ_PARTICULAS, 'periodo': CICLO_PARTICULAS, 'retraso': 6.8,
+     'color': 'rosa', 'opacidad': .84, 'radio': 3.8, 'estela': 42, 'grosor': 1.5},
+    {'posicion_inicial': (-48, 438), 'posicion_final': (1248, 285),
+     'duracion': 1.5 / RAPIDEZ_PARTICULAS, 'periodo': CICLO_PARTICULAS, 'retraso': 15.1,
+     'color': 'crema', 'opacidad': .84, 'radio': 3.6, 'estela': 62, 'grosor': 1.6},
+    {'posicion_inicial': (1248, 146), 'posicion_final': (-48, 106),
+     'duracion': 1.5 / RAPIDEZ_PARTICULAS, 'periodo': CICLO_PARTICULAS, 'retraso': 22.9,
+     'color': 'melocoton', 'opacidad': .84, 'radio': 3.8, 'estela': 52, 'grosor': 1.5},
 ]
 # x, y, ancho, alto. Las diagonales pasan detrás de estas zonas de contenido.
 zonas_protegidas = [
@@ -158,59 +185,80 @@ def crear_estilo_base():
 
 
 def crear_estilos_particulas():
-    """Un cruce lineal por ciclo; el resto del tiempo el grupo es invisible."""
+    """Posición y tangente calculadas en Python; sin JavaScript en el SVG."""
     estilos = []
     for indice, trayectoria in enumerate(particulas):
-        posicion_inicial = trayectoria['posicion_inicial']
-        posicion_final = trayectoria['posicion_final']
         duracion = trayectoria['duracion']
         retraso = trayectoria['retraso']
         periodo = trayectoria['periodo']
         opacidad = trayectoria['opacidad']
-        # Los porcentajes acotan la aparición, no la duración total del ciclo.
-        aparicion = 100 * duracion * .1 / periodo
-        desaparicion = 100 * duracion * .9 / periodo
-        final = 100 * duracion / periodo
-        inicio = f'translate({posicion_inicial[0]}px,{posicion_inicial[1]}px)'
-        destino = f'translate({posicion_final[0]}px,{posicion_final[1]}px)'
-        estilos.append(f'''
-    .trayectoria-{indice} {{animation:cruzar-{indice} {periodo}s linear {retraso}s infinite}}
-    @keyframes cruzar-{indice} {{
-      0% {{transform:{inicio};opacity:0}}
-      {aparicion:.6f}% {{opacity:{opacidad}}}
-      {desaparicion:.6f}% {{opacity:{opacidad}}}
-      {final:.6f}% {{transform:{destino};opacity:0}}
-      100% {{transform:{destino};opacity:0}}
-    }}''')
+        recorrido = crear_recorrido(trayectoria)
+        estilos.append(f'.trayectoria-{indice} {{transform-origin:0 0;animation:cruzar-{indice} {periodo}s linear {retraso}s infinite}}')
+        estilos.append(f'@keyframes cruzar-{indice} {{')
+        for fraccion, x, y, angulo in recorrido:
+            porcentaje = 100 * duracion * fraccion / periodo
+            opacidad_actual = opacidad * min(1, fraccion / .1, (1 - fraccion) / .1)
+            transformacion = f'translate({x:.3f}px,{y:.3f}px) rotate({angulo:.4f}deg)'
+            estilos.append(f'{porcentaje:.6f}% {{transform:{transformacion};opacity:{opacidad_actual:.4f}}}')
+        estilos.append(f'100% {{transform:{transformacion};opacity:0}}\n}}')
     return '\n'.join(estilos)
+
+
+def crear_recorrido(trayectoria):
+    """Giro artístico cerca de la malla; no integra geodésicas de Schwarzschild."""
+    x, y = trayectoria['posicion_inicial']
+    final_x, final_y = trayectoria['posicion_final']
+    diferencia_x, diferencia_y = final_x - x, final_y - y
+    longitud = sqrt(diferencia_x**2 + diferencia_y**2)
+    direccion_x, direccion_y = diferencia_x / longitud, diferencia_y / longitud
+    angulo_inicial = atan2(diferencia_y, diferencia_x)
+    hacia_x, hacia_y = CENTRO_DESVIO[0] - x, CENTRO_DESVIO[1] - y
+    cercania = hacia_x * direccion_x + hacia_y * direccion_y
+    distancia = hacia_x * -direccion_y + hacia_y * direccion_x
+    desvio = 0
+    if not trayectoria.get('esquina') and 0 < cercania < longitud:
+        signo = 1 if distancia >= 0 else -1
+        desvio = signo * radians(ANGULO_DESVIO) * max(0, 1 - abs(distancia) / RADIO_DESVIO)
+    if not desvio:
+        return [(fraccion, x + diferencia_x * fraccion, y + diferencia_y * fraccion,
+                 degrees(angulo_inicial)) for fraccion in (0, .1, .9, 1)]
+
+    def angulo_en(posicion):
+        avance = min(1, max(0, (posicion - cercania + ANCHO_DESVIO) / (2 * ANCHO_DESVIO)))
+        # La derivada se anula en ambos extremos; no cambia la dirección de golpe.
+        giro = avance**2 * (3 - 2 * avance)
+        return angulo_inicial + desvio * giro
+
+    recorrido = [(0, x, y, degrees(angulo_inicial))]
+    paso = longitud / PASOS_DESVIO
+    for indice in range(1, PASOS_DESVIO + 1):
+        angulo_medio = angulo_en((indice - .5) * paso)
+        x += paso * cos(angulo_medio)
+        y += paso * sin(angulo_medio)
+        recorrido.append((indice / PASOS_DESVIO, x, y, degrees(angulo_en(indice * paso))))
+    return recorrido
 
 
 def dibujar_particula(trayectoria):
     """Punto y estela locales; la transformación coloca y mueve el grupo."""
-    posicion_inicial = trayectoria['posicion_inicial']
-    posicion_final = trayectoria['posicion_final']
-    diferencia_x = posicion_final[0] - posicion_inicial[0]
-    diferencia_y = posicion_final[1] - posicion_inicial[1]
-    longitud = sqrt(diferencia_x**2 + diferencia_y**2)
-    cola_x = -LONGITUD_ESTELA * diferencia_x / longitud
-    cola_y = -LONGITUD_ESTELA * diferencia_y / longitud
-    color = PALETA[trayectoria['color']]
+    estela = trayectoria.get('estela', LONGITUD_ESTELA)
+    grosor = trayectoria.get('grosor', GROSOR_ESTELA)
+    color = COLORES_PARTICULAS[trayectoria['color']]
     radio = trayectoria['radio']
-    return f'''<path d="M{cola_x:.2f} {cola_y:.2f}L0 0" fill="none" stroke="{color}" stroke-width="{GROSOR_ESTELA}" stroke-opacity=".6" stroke-linecap="round"/>
+    # La rotación de cada estado alinea esta estela con la tangente del recorrido.
+    return f'''<path d="M{-estela:.2f} 0L0 0" fill="none" stroke="{color}" stroke-width="{grosor}" stroke-opacity=".6" stroke-linecap="round"/>
 <circle r="{radio}" fill="{color}"/>'''
 
 
 def generar_particulas():
-    """Las diagonales recorren la tarjeta y quedan ocultas detrás del contenido."""
+    """Cuatro cruces entre esquinas y siete con ángulos moderados, todos protegidos."""
     partes = ['<g id="particulas" aria-hidden="true" clip-path="url(#borde-particulas)">']
     for indice, trayectoria in enumerate(particulas):
-        if trayectoria.get('diagonal'):
-            partes.append('<g class="diagonal-protegida" mask="url(#proteccion-particulas)">')
+        partes.append('<g class="diagonal-protegida" mask="url(#proteccion-particulas)">')
         partes.append(f'<g class="trayectoria trayectoria-{indice}" opacity="0">')
         partes.append(dibujar_particula(trayectoria))
         partes.append('</g>')
-        if trayectoria.get('diagonal'):
-            partes.append('</g>')
+        partes.append('</g>')
     partes.append('</g>')
     return '\n'.join(partes)
 
@@ -295,7 +343,7 @@ def construir_svg():
     estilos += crear_estilos_particulas()
     partes = [f'''<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="{ALTO_BANNER}" viewBox="0 0 1200 {ALTO_BANNER}" role="img" aria-labelledby="titulo descripcion">
 <title id="titulo">Owen A. Hurtado | Scientific Computing</title>
-<desc id="descripcion">Physics undergraduate exploring computation, numerical methods and astrophysics. The Flamm paraboloid represents an equatorial spatial slice outside a Schwarzschild black hole's event horizon. The meridians show a 30-second axial rotation of the 3D visualization, with directional lighting; this does not represent a rotating black hole. The equations and circular sections remain fixed. Occasional straight particle trails are an artistic interpretation inspired by neutrinos; their timing is deterministic.</desc>
+<desc id="descripcion">Physics undergraduate exploring computation, numerical methods and astrophysics. The Flamm paraboloid represents an equatorial spatial slice outside a Schwarzschild black hole's event horizon. The meridians show a 30-second axial rotation of the 3D visualization, with directional lighting; this does not represent a rotating black hole. The equations and circular sections remain fixed. Occasional particle trails include four corner crossings and seven varied angles. Near the black hole, a subtle artistic deflection evokes gravitational lensing rather than a physical simulation; their timing is deterministic.</desc>
 <style>{estilos}</style>
 <defs>
 <linearGradient id="fondo-identidad" x1="0" y1="0" x2="1" y2="1">
