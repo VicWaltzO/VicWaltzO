@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="576" viewBox="0 0 1200 576" role="img" aria-labelledby="titulo descripcion">
 <title id="titulo">Owen A. Hurtado | Scientific Computing</title>
-<desc id="descripcion">Physics undergraduate exploring computation, numerical methods and astrophysics. The Flamm paraboloid represents an equatorial spatial slice outside a Schwarzschild black hole's event horizon. The meridians show a 30-second axial rotation of the 3D visualization, with directional lighting; this does not represent a rotating black hole. The equations and circular sections remain fixed. Occasional straight particle trails are an artistic interpretation inspired by neutrinos; their timing is deterministic.</desc>
+<desc id="descripcion">Physics undergraduate exploring computation, numerical methods and astrophysics. The Flamm paraboloid represents an equatorial spatial slice outside a Schwarzschild black hole's event horizon. The meridians show a 30-second axial rotation of the 3D visualization, with directional lighting; this does not represent a rotating black hole. The equations and circular sections remain fixed. Occasional particle trails include four corner crossings and seven varied angles. Near the black hole, a subtle artistic deflection evokes gravitational lensing rather than a physical simulation; their timing is deterministic.</desc>
 <style>
     text {font-family:'Segoe UI',Arial,sans-serif;fill:#F2EEE9}
     .mono {font-family:Consolas,'DejaVu Sans Mono',monospace}
@@ -155,69 +155,460 @@
 98.333333% {d:path("M955.3,357.0L955.4,352.3L955.9,347.7L956.6,343.0L957.7,338.3L959.0,333.6L960.7,328.9L962.6,324.2L964.8,319.4L967.4,314.7L970.2,309.9L973.4,305.2L976.8,300.4L980.5,295.6L984.6,290.8L988.9,286.0L993.5,281.2L998.5,276.4L1003.7,271.6L1009.2,266.7L1015.1,261.9L1021.2,257.0L1027.6,252.1L1034.3,247.2L1041.4,242.3L1048.7,237.4L1056.3,232.5L1064.2,227.6L1072.5,222.6L1081.0,217.7L1089.8,212.7L1098.9,207.7L1108.3,202.8");opacity:0.672414}
 99.166667% {d:path("M955.4,357.7L955.6,353.0L956.0,348.4L956.8,343.7L957.8,339.0L959.2,334.4L960.8,329.7L962.8,325.0L965.1,320.3L967.6,315.6L970.5,310.9L973.6,306.2L977.1,301.5L980.8,296.8L984.9,292.0L989.2,287.3L993.9,282.6L998.8,277.8L1004.1,273.1L1009.6,268.4L1015.5,263.6L1021.6,258.8L1028.1,254.1L1034.8,249.3L1041.9,244.5L1049.2,239.8L1056.9,235.0L1064.9,230.2L1073.1,225.4L1081.7,220.6L1090.5,215.8L1099.7,211.0L1109.1,206.1");opacity:0.678851}
 100.000000% {d:path("M955.5,358.4L955.7,353.7L956.1,349.1L956.9,344.4L957.9,339.8L959.3,335.1L960.9,330.5L962.9,325.8L965.1,321.2L967.7,316.5L970.5,311.9L973.7,307.2L977.1,302.6L980.9,297.9L985.0,293.3L989.3,288.6L994.0,284.0L998.9,279.3L1004.2,274.7L1009.8,270.0L1015.6,265.4L1021.8,260.7L1028.2,256.1L1035.0,251.4L1042.1,246.7L1049.4,242.1L1057.1,237.4L1065.1,232.8L1073.3,228.1L1081.9,223.5L1090.8,218.8L1099.9,214.2L1109.4,209.5");opacity:0.684871}
+}.trayectoria-0 {transform-origin:0 0;animation:cruzar-0 28s linear 0.6s infinite}
+@keyframes cruzar-0 {
+0.000000% {transform:translate(-48.000px,302.000px) rotate(-4.2804deg);opacity:0.0000}
+0.049365% {transform:translate(-27.750px,300.484px) rotate(-4.2804deg);opacity:0.1313}
+0.098729% {transform:translate(-7.500px,298.969px) rotate(-4.2804deg);opacity:0.2625}
+0.148094% {transform:translate(12.750px,297.453px) rotate(-4.2804deg);opacity:0.3937}
+0.197459% {transform:translate(33.000px,295.938px) rotate(-4.2804deg);opacity:0.5250}
+0.246823% {transform:translate(53.250px,294.422px) rotate(-4.2804deg);opacity:0.6562}
+0.296188% {transform:translate(73.500px,292.906px) rotate(-4.2804deg);opacity:0.7875}
+0.345553% {transform:translate(93.750px,291.391px) rotate(-4.2804deg);opacity:0.8400}
+0.394918% {transform:translate(114.000px,289.875px) rotate(-4.2804deg);opacity:0.8400}
+0.444282% {transform:translate(134.250px,288.359px) rotate(-4.2804deg);opacity:0.8400}
+0.493647% {transform:translate(154.500px,286.844px) rotate(-4.2804deg);opacity:0.8400}
+0.543012% {transform:translate(174.750px,285.328px) rotate(-4.2804deg);opacity:0.8400}
+0.592376% {transform:translate(195.000px,283.812px) rotate(-4.2804deg);opacity:0.8400}
+0.641741% {transform:translate(215.250px,282.297px) rotate(-4.2804deg);opacity:0.8400}
+0.691106% {transform:translate(235.500px,280.781px) rotate(-4.2804deg);opacity:0.8400}
+0.740470% {transform:translate(255.750px,279.266px) rotate(-4.2804deg);opacity:0.8400}
+0.789835% {transform:translate(276.000px,277.750px) rotate(-4.2804deg);opacity:0.8400}
+0.839200% {transform:translate(296.250px,276.234px) rotate(-4.2804deg);opacity:0.8400}
+0.888565% {transform:translate(316.500px,274.719px) rotate(-4.2804deg);opacity:0.8400}
+0.937929% {transform:translate(336.750px,273.203px) rotate(-4.2804deg);opacity:0.8400}
+0.987294% {transform:translate(357.000px,271.688px) rotate(-4.2804deg);opacity:0.8400}
+1.036659% {transform:translate(377.250px,270.172px) rotate(-4.2804deg);opacity:0.8400}
+1.086023% {transform:translate(397.500px,268.656px) rotate(-4.2804deg);opacity:0.8400}
+1.135388% {transform:translate(417.750px,267.141px) rotate(-4.2804deg);opacity:0.8400}
+1.184753% {transform:translate(438.000px,265.625px) rotate(-4.2804deg);opacity:0.8400}
+1.234117% {transform:translate(458.250px,264.109px) rotate(-4.2804deg);opacity:0.8400}
+1.283482% {transform:translate(478.500px,262.594px) rotate(-4.2804deg);opacity:0.8400}
+1.332847% {transform:translate(498.750px,261.078px) rotate(-4.2804deg);opacity:0.8400}
+1.382212% {transform:translate(519.000px,259.562px) rotate(-4.2804deg);opacity:0.8400}
+1.431576% {transform:translate(539.250px,258.047px) rotate(-4.2804deg);opacity:0.8400}
+1.480941% {transform:translate(559.500px,256.531px) rotate(-4.2804deg);opacity:0.8400}
+1.530306% {transform:translate(579.750px,255.016px) rotate(-4.2804deg);opacity:0.8400}
+1.579670% {transform:translate(600.000px,253.500px) rotate(-4.2804deg);opacity:0.8400}
+1.629035% {transform:translate(620.250px,251.984px) rotate(-4.2804deg);opacity:0.8400}
+1.678400% {transform:translate(640.500px,250.469px) rotate(-4.2804deg);opacity:0.8400}
+1.727764% {transform:translate(660.750px,248.953px) rotate(-4.2804deg);opacity:0.8400}
+1.777129% {transform:translate(681.000px,247.438px) rotate(-4.2804deg);opacity:0.8400}
+1.826494% {transform:translate(701.250px,245.922px) rotate(-4.2804deg);opacity:0.8400}
+1.875859% {transform:translate(721.500px,244.406px) rotate(-4.2804deg);opacity:0.8400}
+1.925223% {transform:translate(741.750px,242.891px) rotate(-4.2804deg);opacity:0.8400}
+1.974588% {transform:translate(762.000px,241.375px) rotate(-4.2804deg);opacity:0.8400}
+2.023953% {transform:translate(782.250px,239.859px) rotate(-4.2804deg);opacity:0.8400}
+2.073317% {transform:translate(802.500px,238.345px) rotate(-4.2553deg);opacity:0.8400}
+2.122682% {transform:translate(822.752px,236.852px) rotate(-4.1649deg);opacity:0.8400}
+2.172047% {transform:translate(843.006px,235.400px) rotate(-4.0213deg);opacity:0.8400}
+2.221411% {transform:translate(863.265px,234.007px) rotate(-3.8373deg);opacity:0.8400}
+2.270776% {transform:translate(883.529px,232.685px) rotate(-3.6262deg);opacity:0.8400}
+2.320141% {transform:translate(903.797px,231.440px) rotate(-3.4008deg);opacity:0.8400}
+2.369505% {transform:translate(924.070px,230.276px) rotate(-3.1744deg);opacity:0.8400}
+2.418870% {transform:translate(944.348px,229.190px) rotate(-2.9600deg);opacity:0.8400}
+2.468235% {transform:translate(964.629px,228.176px) rotate(-2.7706deg);opacity:0.8400}
+2.517600% {transform:translate(984.914px,227.223px) rotate(-2.6193deg);opacity:0.8400}
+2.566964% {transform:translate(1005.200px,226.316px) rotate(-2.5192deg);opacity:0.8400}
+2.616329% {transform:translate(1025.487px,225.432px) rotate(-2.4833deg);opacity:0.8400}
+2.665694% {transform:translate(1045.775px,224.553px) rotate(-2.4833deg);opacity:0.8400}
+2.715058% {transform:translate(1066.063px,223.673px) rotate(-2.4833deg);opacity:0.8400}
+2.764423% {transform:translate(1086.350px,222.793px) rotate(-2.4833deg);opacity:0.8400}
+2.813788% {transform:translate(1106.638px,221.913px) rotate(-2.4833deg);opacity:0.8400}
+2.863152% {transform:translate(1126.925px,221.033px) rotate(-2.4833deg);opacity:0.7875}
+2.912517% {transform:translate(1147.213px,220.153px) rotate(-2.4833deg);opacity:0.6562}
+2.961882% {transform:translate(1167.500px,219.273px) rotate(-2.4833deg);opacity:0.5250}
+3.011247% {transform:translate(1187.788px,218.394px) rotate(-2.4833deg);opacity:0.3937}
+3.060611% {transform:translate(1208.076px,217.514px) rotate(-2.4833deg);opacity:0.2625}
+3.109976% {transform:translate(1228.363px,216.634px) rotate(-2.4833deg);opacity:0.1313}
+3.159341% {transform:translate(1248.651px,215.754px) rotate(-2.4833deg);opacity:0.0000}
+100% {transform:translate(1248.651px,215.754px) rotate(-2.4833deg);opacity:0}
 }
-    .trayectoria-0 {animation:cruzar-0 28s linear 0.6s infinite}
-    @keyframes cruzar-0 {
-      0% {transform:translate(44px,115px);opacity:0}
-      0.410714% {opacity:0.84}
-      3.696429% {opacity:0.84}
-      4.107143% {transform:translate(634px,115px);opacity:0}
-      100% {transform:translate(634px,115px);opacity:0}
-    }
-
-    .trayectoria-1 {animation:cruzar-1 28s linear 9.1s infinite}
-    @keyframes cruzar-1 {
-      0% {transform:translate(624px,440px);opacity:0}
-      0.482143% {opacity:0.86}
-      4.339286% {opacity:0.86}
-      4.821429% {transform:translate(70px,448px);opacity:0}
-      100% {transform:translate(70px,448px);opacity:0}
-    }
-
-    .trayectoria-2 {animation:cruzar-2 28s linear 4.6s infinite}
-    @keyframes cruzar-2 {
-      0% {transform:translate(746px,163px);opacity:0}
-      0.500000% {opacity:0.84}
-      4.500000% {opacity:0.84}
-      5.000000% {transform:translate(1068px,298px);opacity:0}
-      100% {transform:translate(1068px,298px);opacity:0}
-    }
-
-    .trayectoria-3 {animation:cruzar-3 28s linear 17.6s infinite}
-    @keyframes cruzar-3 {
-      0% {transform:translate(1162px,141px);opacity:0}
-      0.446429% {opacity:0.85}
-      4.017857% {opacity:0.85}
-      4.464286% {transform:translate(1092px,323px);opacity:0}
-      100% {transform:translate(1092px,323px);opacity:0}
-    }
-
-    .trayectoria-4 {animation:cruzar-4 28s linear 12.6s infinite}
-    @keyframes cruzar-4 {
-      0% {transform:translate(18px,558px);opacity:0}
-      0.535714% {opacity:0.86}
-      4.821429% {opacity:0.86}
-      5.357143% {transform:translate(1182px,18px);opacity:0}
-      100% {transform:translate(1182px,18px);opacity:0}
-    }
-
-    .trayectoria-5 {animation:cruzar-5 28s linear 25.1s infinite}
-    @keyframes cruzar-5 {
-      0% {transform:translate(18px,18px);opacity:0}
-      0.535714% {opacity:0.84}
-      4.821429% {opacity:0.84}
-      5.357143% {transform:translate(1182px,558px);opacity:0}
-      100% {transform:translate(1182px,558px);opacity:0}
-    }
-
-    .trayectoria-6 {animation:cruzar-6 28s linear 20.6s infinite}
-    @keyframes cruzar-6 {
-      0% {transform:translate(1182px,118px);opacity:0}
-      0.517857% {opacity:0.85}
-      4.660714% {opacity:0.85}
-      5.178571% {transform:translate(18px,490px);opacity:0}
-      100% {transform:translate(18px,490px);opacity:0}
-    }</style>
+.trayectoria-1 {transform-origin:0 0;animation:cruzar-1 28s linear 9.1s infinite}
+@keyframes cruzar-1 {
+0.000000% {transform:translate(1248.000px,215.000px) rotate(176.1595deg);opacity:0.0000}
+0.057950% {transform:translate(1227.750px,216.359px) rotate(176.1595deg);opacity:0.1313}
+0.115900% {transform:translate(1207.500px,217.719px) rotate(176.1595deg);opacity:0.2625}
+0.173850% {transform:translate(1187.250px,219.078px) rotate(176.1595deg);opacity:0.3937}
+0.231799% {transform:translate(1167.000px,220.438px) rotate(176.1595deg);opacity:0.5250}
+0.289749% {transform:translate(1146.750px,221.797px) rotate(176.1595deg);opacity:0.6562}
+0.347699% {transform:translate(1126.500px,223.156px) rotate(176.1595deg);opacity:0.7875}
+0.405649% {transform:translate(1106.250px,224.516px) rotate(176.1595deg);opacity:0.8400}
+0.463599% {transform:translate(1086.000px,225.875px) rotate(176.1595deg);opacity:0.8400}
+0.521549% {transform:translate(1065.750px,227.234px) rotate(176.1595deg);opacity:0.8400}
+0.579499% {transform:translate(1045.500px,228.594px) rotate(176.1595deg);opacity:0.8400}
+0.637448% {transform:translate(1025.250px,229.953px) rotate(176.1593deg);opacity:0.8400}
+0.695398% {transform:translate(1005.000px,231.317px) rotate(176.1139deg);opacity:0.8400}
+0.753348% {transform:translate(984.753px,232.710px) rotate(175.9989deg);opacity:0.8400}
+0.811298% {transform:translate(964.508px,234.154px) rotate(175.8286deg);opacity:0.8400}
+0.869248% {transform:translate(944.269px,235.666px) rotate(175.6174deg);opacity:0.8400}
+0.927198% {transform:translate(924.036px,237.258px) rotate(175.3798deg);opacity:0.8400}
+0.985148% {transform:translate(903.810px,238.937px) rotate(175.1300deg);opacity:0.8400}
+1.043098% {transform:translate(883.592px,240.704px) rotate(174.8824deg);opacity:0.8400}
+1.101047% {transform:translate(863.381px,242.556px) rotate(174.6515deg);opacity:0.8400}
+1.158997% {transform:translate(843.177px,244.485px) rotate(174.4516deg);opacity:0.8400}
+1.216947% {transform:translate(822.980px,246.477px) rotate(174.2970deg);opacity:0.8400}
+1.274897% {transform:translate(802.786px,248.514px) rotate(174.2022deg);opacity:0.8400}
+1.332847% {transform:translate(782.595px,250.571px) rotate(174.1789deg);opacity:0.8400}
+1.390797% {transform:translate(762.404px,252.629px) rotate(174.1789deg);opacity:0.8400}
+1.448747% {transform:translate(742.214px,254.688px) rotate(174.1789deg);opacity:0.8400}
+1.506696% {transform:translate(722.023px,256.746px) rotate(174.1789deg);opacity:0.8400}
+1.564646% {transform:translate(701.832px,258.805px) rotate(174.1789deg);opacity:0.8400}
+1.622596% {transform:translate(681.641px,260.863px) rotate(174.1789deg);opacity:0.8400}
+1.680546% {transform:translate(661.450px,262.922px) rotate(174.1789deg);opacity:0.8400}
+1.738496% {transform:translate(641.259px,264.980px) rotate(174.1789deg);opacity:0.8400}
+1.796446% {transform:translate(621.068px,267.039px) rotate(174.1789deg);opacity:0.8400}
+1.854396% {transform:translate(600.877px,269.097px) rotate(174.1789deg);opacity:0.8400}
+1.912345% {transform:translate(580.686px,271.155px) rotate(174.1789deg);opacity:0.8400}
+1.970295% {transform:translate(560.495px,273.214px) rotate(174.1789deg);opacity:0.8400}
+2.028245% {transform:translate(540.304px,275.272px) rotate(174.1789deg);opacity:0.8400}
+2.086195% {transform:translate(520.113px,277.331px) rotate(174.1789deg);opacity:0.8400}
+2.144145% {transform:translate(499.922px,279.389px) rotate(174.1789deg);opacity:0.8400}
+2.202095% {transform:translate(479.732px,281.448px) rotate(174.1789deg);opacity:0.8400}
+2.260045% {transform:translate(459.541px,283.506px) rotate(174.1789deg);opacity:0.8400}
+2.317995% {transform:translate(439.350px,285.565px) rotate(174.1789deg);opacity:0.8400}
+2.375944% {transform:translate(419.159px,287.623px) rotate(174.1789deg);opacity:0.8400}
+2.433894% {transform:translate(398.968px,289.681px) rotate(174.1789deg);opacity:0.8400}
+2.491844% {transform:translate(378.777px,291.740px) rotate(174.1789deg);opacity:0.8400}
+2.549794% {transform:translate(358.586px,293.798px) rotate(174.1789deg);opacity:0.8400}
+2.607744% {transform:translate(338.395px,295.857px) rotate(174.1789deg);opacity:0.8400}
+2.665694% {transform:translate(318.204px,297.915px) rotate(174.1789deg);opacity:0.8400}
+2.723644% {transform:translate(298.013px,299.974px) rotate(174.1789deg);opacity:0.8400}
+2.781593% {transform:translate(277.822px,302.032px) rotate(174.1789deg);opacity:0.8400}
+2.839543% {transform:translate(257.631px,304.091px) rotate(174.1789deg);opacity:0.8400}
+2.897493% {transform:translate(237.441px,306.149px) rotate(174.1789deg);opacity:0.8400}
+2.955443% {transform:translate(217.250px,308.207px) rotate(174.1789deg);opacity:0.8400}
+3.013393% {transform:translate(197.059px,310.266px) rotate(174.1789deg);opacity:0.8400}
+3.071343% {transform:translate(176.868px,312.324px) rotate(174.1789deg);opacity:0.8400}
+3.129293% {transform:translate(156.677px,314.383px) rotate(174.1789deg);opacity:0.8400}
+3.187242% {transform:translate(136.486px,316.441px) rotate(174.1789deg);opacity:0.8400}
+3.245192% {transform:translate(116.295px,318.500px) rotate(174.1789deg);opacity:0.8400}
+3.303142% {transform:translate(96.104px,320.558px) rotate(174.1789deg);opacity:0.8400}
+3.361092% {transform:translate(75.913px,322.617px) rotate(174.1789deg);opacity:0.7875}
+3.419042% {transform:translate(55.722px,324.675px) rotate(174.1789deg);opacity:0.6562}
+3.476992% {transform:translate(35.531px,326.733px) rotate(174.1789deg);opacity:0.5250}
+3.534942% {transform:translate(15.340px,328.792px) rotate(174.1789deg);opacity:0.3937}
+3.592891% {transform:translate(-4.850px,330.850px) rotate(174.1789deg);opacity:0.2625}
+3.650841% {transform:translate(-25.041px,332.909px) rotate(174.1789deg);opacity:0.1313}
+3.708791% {transform:translate(-45.232px,334.967px) rotate(174.1789deg);opacity:0.0000}
+100% {transform:translate(-45.232px,334.967px) rotate(174.1789deg);opacity:0}
+}
+.trayectoria-2 {transform-origin:0 0;animation:cruzar-2 28s linear 4.6s infinite}
+@keyframes cruzar-2 {
+0.000000% {transform:translate(-48.000px,248.000px) rotate(3.5323deg);opacity:0.0000}
+0.060096% {transform:translate(-27.750px,249.250px) rotate(3.5323deg);opacity:0.1313}
+0.120192% {transform:translate(-7.500px,250.500px) rotate(3.5323deg);opacity:0.2625}
+0.180288% {transform:translate(12.750px,251.750px) rotate(3.5323deg);opacity:0.3937}
+0.240385% {transform:translate(33.000px,253.000px) rotate(3.5323deg);opacity:0.5250}
+0.300481% {transform:translate(53.250px,254.250px) rotate(3.5323deg);opacity:0.6562}
+0.360577% {transform:translate(73.500px,255.500px) rotate(3.5323deg);opacity:0.7875}
+0.420673% {transform:translate(93.750px,256.750px) rotate(3.5323deg);opacity:0.8400}
+0.480769% {transform:translate(114.000px,258.000px) rotate(3.5323deg);opacity:0.8400}
+0.540865% {transform:translate(134.250px,259.250px) rotate(3.5323deg);opacity:0.8400}
+0.600962% {transform:translate(154.500px,260.500px) rotate(3.5323deg);opacity:0.8400}
+0.661058% {transform:translate(174.750px,261.750px) rotate(3.5323deg);opacity:0.8400}
+0.721154% {transform:translate(195.000px,263.000px) rotate(3.5323deg);opacity:0.8400}
+0.781250% {transform:translate(215.250px,264.250px) rotate(3.5323deg);opacity:0.8400}
+0.841346% {transform:translate(235.500px,265.500px) rotate(3.5323deg);opacity:0.8400}
+0.901442% {transform:translate(255.750px,266.750px) rotate(3.5323deg);opacity:0.8400}
+0.961538% {transform:translate(276.000px,268.000px) rotate(3.5323deg);opacity:0.8400}
+1.021635% {transform:translate(296.250px,269.250px) rotate(3.5323deg);opacity:0.8400}
+1.081731% {transform:translate(316.500px,270.500px) rotate(3.5323deg);opacity:0.8400}
+1.141827% {transform:translate(336.750px,271.750px) rotate(3.5323deg);opacity:0.8400}
+1.201923% {transform:translate(357.000px,273.000px) rotate(3.5323deg);opacity:0.8400}
+1.262019% {transform:translate(377.250px,274.250px) rotate(3.5323deg);opacity:0.8400}
+1.322115% {transform:translate(397.500px,275.500px) rotate(3.5323deg);opacity:0.8400}
+1.382212% {transform:translate(417.750px,276.750px) rotate(3.5323deg);opacity:0.8400}
+1.442308% {transform:translate(438.000px,278.000px) rotate(3.5323deg);opacity:0.8400}
+1.502404% {transform:translate(458.250px,279.250px) rotate(3.5323deg);opacity:0.8400}
+1.562500% {transform:translate(478.500px,280.500px) rotate(3.5323deg);opacity:0.8400}
+1.622596% {transform:translate(498.750px,281.750px) rotate(3.5323deg);opacity:0.8400}
+1.682692% {transform:translate(519.000px,283.000px) rotate(3.5323deg);opacity:0.8400}
+1.742788% {transform:translate(539.250px,284.250px) rotate(3.5323deg);opacity:0.8400}
+1.802885% {transform:translate(559.500px,285.500px) rotate(3.5323deg);opacity:0.8400}
+1.862981% {transform:translate(579.750px,286.750px) rotate(3.5323deg);opacity:0.8400}
+1.923077% {transform:translate(600.000px,288.000px) rotate(3.5323deg);opacity:0.8400}
+1.983173% {transform:translate(620.250px,289.250px) rotate(3.5323deg);opacity:0.8400}
+2.043269% {transform:translate(640.500px,290.500px) rotate(3.5323deg);opacity:0.8400}
+2.103365% {transform:translate(660.750px,291.750px) rotate(3.5323deg);opacity:0.8400}
+2.163462% {transform:translate(681.000px,293.000px) rotate(3.5323deg);opacity:0.8400}
+2.223558% {transform:translate(701.250px,294.250px) rotate(3.5323deg);opacity:0.8400}
+2.283654% {transform:translate(721.500px,295.500px) rotate(3.5323deg);opacity:0.8400}
+2.343750% {transform:translate(741.750px,296.750px) rotate(3.5323deg);opacity:0.8400}
+2.403846% {transform:translate(762.000px,298.000px) rotate(3.5323deg);opacity:0.8400}
+2.463942% {transform:translate(782.250px,299.250px) rotate(3.5323deg);opacity:0.8400}
+2.524038% {transform:translate(802.500px,300.500px) rotate(3.5356deg);opacity:0.8400}
+2.584135% {transform:translate(822.749px,301.763px) rotate(3.6404deg);opacity:0.8400}
+2.644231% {transform:translate(842.994px,303.088px) rotate(3.8725deg);opacity:0.8400}
+2.704327% {transform:translate(863.233px,304.513px) rotate(4.2048deg);opacity:0.8400}
+2.764423% {transform:translate(883.462px,306.069px) rotate(4.6105deg);opacity:0.8400}
+2.824519% {transform:translate(903.678px,307.778px) rotate(5.0624deg);opacity:0.8400}
+2.884615% {transform:translate(923.880px,309.651px) rotate(5.5334deg);opacity:0.8400}
+2.944712% {transform:translate(944.066px,311.690px) rotate(5.9967deg);opacity:0.8400}
+3.004808% {transform:translate(964.235px,313.887px) rotate(6.4250deg);opacity:0.8400}
+3.064904% {transform:translate(984.388px,316.226px) rotate(6.7915deg);opacity:0.8400}
+3.125000% {transform:translate(1004.528px,318.678px) rotate(7.0691deg);opacity:0.8400}
+3.185096% {transform:translate(1024.658px,321.209px) rotate(7.2307deg);opacity:0.8400}
+3.245192% {transform:translate(1044.784px,323.773px) rotate(7.2608deg);opacity:0.8400}
+3.305288% {transform:translate(1064.910px,326.337px) rotate(7.2608deg);opacity:0.8400}
+3.365385% {transform:translate(1085.036px,328.901px) rotate(7.2608deg);opacity:0.8400}
+3.425481% {transform:translate(1105.162px,331.465px) rotate(7.2608deg);opacity:0.8400}
+3.485577% {transform:translate(1125.288px,334.030px) rotate(7.2608deg);opacity:0.7875}
+3.545673% {transform:translate(1145.413px,336.594px) rotate(7.2608deg);opacity:0.6562}
+3.605769% {transform:translate(1165.539px,339.158px) rotate(7.2608deg);opacity:0.5250}
+3.665865% {transform:translate(1185.665px,341.722px) rotate(7.2608deg);opacity:0.3937}
+3.725962% {transform:translate(1205.791px,344.286px) rotate(7.2608deg);opacity:0.2625}
+3.786058% {transform:translate(1225.917px,346.851px) rotate(7.2608deg);opacity:0.1313}
+3.846154% {transform:translate(1246.043px,349.415px) rotate(7.2608deg);opacity:0.0000}
+100% {transform:translate(1246.043px,349.415px) rotate(7.2608deg);opacity:0}
+}
+.trayectoria-3 {transform-origin:0 0;animation:cruzar-3 28s linear 17.6s infinite}
+@keyframes cruzar-3 {
+0.000000% {transform:translate(1248.000px,270.000px) rotate(-177.3493deg);opacity:0.0000}
+0.053657% {transform:translate(1227.750px,269.062px) rotate(-177.3493deg);opacity:0.1313}
+0.107315% {transform:translate(1207.500px,268.125px) rotate(-177.3493deg);opacity:0.2625}
+0.160972% {transform:translate(1187.250px,267.188px) rotate(-177.3493deg);opacity:0.3937}
+0.214629% {transform:translate(1167.000px,266.250px) rotate(-177.3493deg);opacity:0.5250}
+0.268286% {transform:translate(1146.750px,265.312px) rotate(-177.3493deg);opacity:0.6562}
+0.321944% {transform:translate(1126.500px,264.375px) rotate(-177.3493deg);opacity:0.7875}
+0.375601% {transform:translate(1106.250px,263.438px) rotate(-177.3493deg);opacity:0.8400}
+0.429258% {transform:translate(1086.000px,262.500px) rotate(-177.3493deg);opacity:0.8400}
+0.482916% {transform:translate(1065.750px,261.562px) rotate(-177.3493deg);opacity:0.8400}
+0.536573% {transform:translate(1045.500px,260.625px) rotate(-177.3493deg);opacity:0.8400}
+0.590230% {transform:translate(1025.250px,259.688px) rotate(-177.3744deg);opacity:0.8400}
+0.643887% {transform:translate(1004.999px,258.776px) rotate(-177.4858deg);opacity:0.8400}
+0.697545% {transform:translate(984.745px,257.916px) rotate(-177.6704deg);opacity:0.8400}
+0.751202% {transform:translate(964.489px,257.133px) rotate(-177.9109deg);opacity:0.8400}
+0.804859% {transform:translate(944.229px,256.442px) rotate(-178.1898deg);opacity:0.8400}
+0.858516% {transform:translate(923.966px,255.854px) rotate(-178.4897deg);opacity:0.8400}
+0.912174% {transform:translate(903.700px,255.373px) rotate(-178.7932deg);opacity:0.8400}
+0.965831% {transform:translate(883.432px,254.999px) rotate(-179.0830deg);opacity:0.8400}
+1.019488% {transform:translate(863.162px,254.722px) rotate(-179.3415deg);opacity:0.8400}
+1.073146% {transform:translate(842.891px,254.528px) rotate(-179.5514deg);opacity:0.8400}
+1.126803% {transform:translate(822.620px,254.399px) rotate(-179.6954deg);opacity:0.8400}
+1.180460% {transform:translate(802.348px,254.306px) rotate(-179.7558deg);opacity:0.8400}
+1.234117% {transform:translate(782.077px,254.219px) rotate(-179.7567deg);opacity:0.8400}
+1.287775% {transform:translate(761.805px,254.133px) rotate(-179.7567deg);opacity:0.8400}
+1.341432% {transform:translate(741.534px,254.047px) rotate(-179.7567deg);opacity:0.8400}
+1.395089% {transform:translate(721.262px,253.961px) rotate(-179.7567deg);opacity:0.8400}
+1.448747% {transform:translate(700.991px,253.875px) rotate(-179.7567deg);opacity:0.8400}
+1.502404% {transform:translate(680.719px,253.789px) rotate(-179.7567deg);opacity:0.8400}
+1.556061% {transform:translate(660.448px,253.703px) rotate(-179.7567deg);opacity:0.8400}
+1.609718% {transform:translate(640.176px,253.617px) rotate(-179.7567deg);opacity:0.8400}
+1.663376% {transform:translate(619.905px,253.531px) rotate(-179.7567deg);opacity:0.8400}
+1.717033% {transform:translate(599.633px,253.445px) rotate(-179.7567deg);opacity:0.8400}
+1.770690% {transform:translate(579.362px,253.359px) rotate(-179.7567deg);opacity:0.8400}
+1.824348% {transform:translate(559.090px,253.272px) rotate(-179.7567deg);opacity:0.8400}
+1.878005% {transform:translate(538.819px,253.186px) rotate(-179.7567deg);opacity:0.8400}
+1.931662% {transform:translate(518.547px,253.100px) rotate(-179.7567deg);opacity:0.8400}
+1.985319% {transform:translate(498.276px,253.014px) rotate(-179.7567deg);opacity:0.8400}
+2.038977% {transform:translate(478.004px,252.928px) rotate(-179.7567deg);opacity:0.8400}
+2.092634% {transform:translate(457.733px,252.842px) rotate(-179.7567deg);opacity:0.8400}
+2.146291% {transform:translate(437.461px,252.756px) rotate(-179.7567deg);opacity:0.8400}
+2.199948% {transform:translate(417.190px,252.670px) rotate(-179.7567deg);opacity:0.8400}
+2.253606% {transform:translate(396.918px,252.584px) rotate(-179.7567deg);opacity:0.8400}
+2.307263% {transform:translate(376.647px,252.498px) rotate(-179.7567deg);opacity:0.8400}
+2.360920% {transform:translate(356.375px,252.412px) rotate(-179.7567deg);opacity:0.8400}
+2.414578% {transform:translate(336.104px,252.325px) rotate(-179.7567deg);opacity:0.8400}
+2.468235% {transform:translate(315.832px,252.239px) rotate(-179.7567deg);opacity:0.8400}
+2.521892% {transform:translate(295.561px,252.153px) rotate(-179.7567deg);opacity:0.8400}
+2.575549% {transform:translate(275.289px,252.067px) rotate(-179.7567deg);opacity:0.8400}
+2.629207% {transform:translate(255.018px,251.981px) rotate(-179.7567deg);opacity:0.8400}
+2.682864% {transform:translate(234.746px,251.895px) rotate(-179.7567deg);opacity:0.8400}
+2.736521% {transform:translate(214.475px,251.809px) rotate(-179.7567deg);opacity:0.8400}
+2.790179% {transform:translate(194.203px,251.723px) rotate(-179.7567deg);opacity:0.8400}
+2.843836% {transform:translate(173.931px,251.637px) rotate(-179.7567deg);opacity:0.8400}
+2.897493% {transform:translate(153.660px,251.551px) rotate(-179.7567deg);opacity:0.8400}
+2.951150% {transform:translate(133.388px,251.465px) rotate(-179.7567deg);opacity:0.8400}
+3.004808% {transform:translate(113.117px,251.378px) rotate(-179.7567deg);opacity:0.8400}
+3.058465% {transform:translate(92.845px,251.292px) rotate(-179.7567deg);opacity:0.8400}
+3.112122% {transform:translate(72.574px,251.206px) rotate(-179.7567deg);opacity:0.7875}
+3.165780% {transform:translate(52.302px,251.120px) rotate(-179.7567deg);opacity:0.6562}
+3.219437% {transform:translate(32.031px,251.034px) rotate(-179.7567deg);opacity:0.5250}
+3.273094% {transform:translate(11.759px,250.948px) rotate(-179.7567deg);opacity:0.3937}
+3.326751% {transform:translate(-8.512px,250.862px) rotate(-179.7567deg);opacity:0.2625}
+3.380409% {transform:translate(-28.784px,250.776px) rotate(-179.7567deg);opacity:0.1313}
+3.434066% {transform:translate(-49.055px,250.690px) rotate(-179.7567deg);opacity:0.0000}
+100% {transform:translate(-49.055px,250.690px) rotate(-179.7567deg);opacity:0}
+}
+.trayectoria-4 {transform-origin:0 0;animation:cruzar-4 28s linear 12.6s infinite}
+@keyframes cruzar-4 {
+0.000000% {transform:translate(-48.000px,599.040px) rotate(-25.6410deg);opacity:0.0000}
+0.412088% {transform:translate(81.600px,536.832px) rotate(-25.6410deg);opacity:0.8400}
+3.708791% {transform:translate(1118.400px,39.168px) rotate(-25.6410deg);opacity:0.8400}
+4.120879% {transform:translate(1248.000px,-23.040px) rotate(-25.6410deg);opacity:0.0000}
+100% {transform:translate(1248.000px,-23.040px) rotate(-25.6410deg);opacity:0}
+}
+.trayectoria-5 {transform-origin:0 0;animation:cruzar-5 28s linear 25.1s infinite}
+@keyframes cruzar-5 {
+0.000000% {transform:translate(-48.000px,-23.040px) rotate(25.6410deg);opacity:0.0000}
+0.412088% {transform:translate(81.600px,39.168px) rotate(25.6410deg);opacity:0.8400}
+3.708791% {transform:translate(1118.400px,536.832px) rotate(25.6410deg);opacity:0.8400}
+4.120879% {transform:translate(1248.000px,599.040px) rotate(25.6410deg);opacity:0.0000}
+100% {transform:translate(1248.000px,599.040px) rotate(25.6410deg);opacity:0}
+}
+.trayectoria-6 {transform-origin:0 0;animation:cruzar-6 28s linear 20.6s infinite}
+@keyframes cruzar-6 {
+0.000000% {transform:translate(1248.000px,310.000px) rotate(-178.7623deg);opacity:0.0000}
+0.062242% {transform:translate(1227.750px,309.562px) rotate(-178.7623deg);opacity:0.1313}
+0.124485% {transform:translate(1207.500px,309.125px) rotate(-178.7623deg);opacity:0.2625}
+0.186727% {transform:translate(1187.250px,308.688px) rotate(-178.7623deg);opacity:0.3937}
+0.248970% {transform:translate(1167.000px,308.250px) rotate(-178.7623deg);opacity:0.5250}
+0.311212% {transform:translate(1146.750px,307.812px) rotate(-178.7623deg);opacity:0.6562}
+0.373455% {transform:translate(1126.500px,307.375px) rotate(-178.7623deg);opacity:0.7875}
+0.435697% {transform:translate(1106.250px,306.938px) rotate(-178.7623deg);opacity:0.8400}
+0.497940% {transform:translate(1086.000px,306.500px) rotate(-178.7623deg);opacity:0.8400}
+0.560182% {transform:translate(1065.750px,306.062px) rotate(-178.7623deg);opacity:0.8400}
+0.622424% {transform:translate(1045.500px,305.625px) rotate(-178.7623deg);opacity:0.8400}
+0.684667% {transform:translate(1025.250px,305.188px) rotate(-178.7841deg);opacity:0.8400}
+0.746909% {transform:translate(1004.999px,304.778px) rotate(-178.9293deg);opacity:0.8400}
+0.809152% {transform:translate(984.747px,304.441px) rotate(-179.1887deg);opacity:0.8400}
+0.871394% {transform:translate(964.494px,304.212px) rotate(-179.5363deg);opacity:0.8400}
+0.933637% {transform:translate(944.240px,304.118px) rotate(-179.9460deg);opacity:0.8400}
+0.995879% {transform:translate(923.985px,304.177px) rotate(-180.3918deg);opacity:0.8400}
+1.058122% {transform:translate(903.731px,304.396px) rotate(-180.8476deg);opacity:0.8400}
+1.120364% {transform:translate(883.480px,304.775px) rotate(-181.2873deg);opacity:0.8400}
+1.182606% {transform:translate(863.232px,305.303px) rotate(-181.6851deg);opacity:0.8400}
+1.244849% {transform:translate(842.988px,305.960px) rotate(-182.0147deg);opacity:0.8400}
+1.307091% {transform:translate(822.748px,306.718px) rotate(-182.2502deg);opacity:0.8400}
+1.369334% {transform:translate(802.510px,307.540px) rotate(-182.3655deg);opacity:0.8400}
+1.431576% {transform:translate(782.272px,308.378px) rotate(-182.3728deg);opacity:0.8400}
+1.493819% {transform:translate(762.035px,309.217px) rotate(-182.3728deg);opacity:0.8400}
+1.556061% {transform:translate(741.798px,310.056px) rotate(-182.3728deg);opacity:0.8400}
+1.618304% {transform:translate(721.560px,310.894px) rotate(-182.3728deg);opacity:0.8400}
+1.680546% {transform:translate(701.323px,311.733px) rotate(-182.3728deg);opacity:0.8400}
+1.742788% {transform:translate(681.086px,312.571px) rotate(-182.3728deg);opacity:0.8400}
+1.805031% {transform:translate(660.848px,313.410px) rotate(-182.3728deg);opacity:0.8400}
+1.867273% {transform:translate(640.611px,314.248px) rotate(-182.3728deg);opacity:0.8400}
+1.929516% {transform:translate(620.373px,315.087px) rotate(-182.3728deg);opacity:0.8400}
+1.991758% {transform:translate(600.136px,315.926px) rotate(-182.3728deg);opacity:0.8400}
+2.054001% {transform:translate(579.899px,316.764px) rotate(-182.3728deg);opacity:0.8400}
+2.116243% {transform:translate(559.661px,317.603px) rotate(-182.3728deg);opacity:0.8400}
+2.178486% {transform:translate(539.424px,318.441px) rotate(-182.3728deg);opacity:0.8400}
+2.240728% {transform:translate(519.187px,319.280px) rotate(-182.3728deg);opacity:0.8400}
+2.302970% {transform:translate(498.949px,320.118px) rotate(-182.3728deg);opacity:0.8400}
+2.365213% {transform:translate(478.712px,320.957px) rotate(-182.3728deg);opacity:0.8400}
+2.427455% {transform:translate(458.475px,321.796px) rotate(-182.3728deg);opacity:0.8400}
+2.489698% {transform:translate(438.237px,322.634px) rotate(-182.3728deg);opacity:0.8400}
+2.551940% {transform:translate(418.000px,323.473px) rotate(-182.3728deg);opacity:0.8400}
+2.614183% {transform:translate(397.763px,324.311px) rotate(-182.3728deg);opacity:0.8400}
+2.676425% {transform:translate(377.525px,325.150px) rotate(-182.3728deg);opacity:0.8400}
+2.738668% {transform:translate(357.288px,325.988px) rotate(-182.3728deg);opacity:0.8400}
+2.800910% {transform:translate(337.050px,326.827px) rotate(-182.3728deg);opacity:0.8400}
+2.863152% {transform:translate(316.813px,327.666px) rotate(-182.3728deg);opacity:0.8400}
+2.925395% {transform:translate(296.576px,328.504px) rotate(-182.3728deg);opacity:0.8400}
+2.987637% {transform:translate(276.338px,329.343px) rotate(-182.3728deg);opacity:0.8400}
+3.049880% {transform:translate(256.101px,330.181px) rotate(-182.3728deg);opacity:0.8400}
+3.112122% {transform:translate(235.864px,331.020px) rotate(-182.3728deg);opacity:0.8400}
+3.174365% {transform:translate(215.626px,331.858px) rotate(-182.3728deg);opacity:0.8400}
+3.236607% {transform:translate(195.389px,332.697px) rotate(-182.3728deg);opacity:0.8400}
+3.298850% {transform:translate(175.152px,333.535px) rotate(-182.3728deg);opacity:0.8400}
+3.361092% {transform:translate(154.914px,334.374px) rotate(-182.3728deg);opacity:0.8400}
+3.423334% {transform:translate(134.677px,335.213px) rotate(-182.3728deg);opacity:0.8400}
+3.485577% {transform:translate(114.439px,336.051px) rotate(-182.3728deg);opacity:0.8400}
+3.547819% {transform:translate(94.202px,336.890px) rotate(-182.3728deg);opacity:0.8400}
+3.610062% {transform:translate(73.965px,337.728px) rotate(-182.3728deg);opacity:0.7875}
+3.672304% {transform:translate(53.727px,338.567px) rotate(-182.3728deg);opacity:0.6562}
+3.734547% {transform:translate(33.490px,339.405px) rotate(-182.3728deg);opacity:0.5250}
+3.796789% {transform:translate(13.253px,340.244px) rotate(-182.3728deg);opacity:0.3937}
+3.859032% {transform:translate(-6.985px,341.083px) rotate(-182.3728deg);opacity:0.2625}
+3.921274% {transform:translate(-27.222px,341.921px) rotate(-182.3728deg);opacity:0.1313}
+3.983516% {transform:translate(-47.459px,342.760px) rotate(-182.3728deg);opacity:0.0000}
+100% {transform:translate(-47.459px,342.760px) rotate(-182.3728deg);opacity:0}
+}
+.trayectoria-7 {transform-origin:0 0;animation:cruzar-7 28s linear 2.6s infinite}
+@keyframes cruzar-7 {
+0.000000% {transform:translate(1248.000px,599.040px) rotate(-154.3590deg);opacity:0.0000}
+0.412088% {transform:translate(1118.400px,536.832px) rotate(-154.3590deg);opacity:0.8400}
+3.708791% {transform:translate(81.600px,39.168px) rotate(-154.3590deg);opacity:0.8400}
+4.120879% {transform:translate(-48.000px,-23.040px) rotate(-154.3590deg);opacity:0.0000}
+100% {transform:translate(-48.000px,-23.040px) rotate(-154.3590deg);opacity:0}
+}
+.trayectoria-8 {transform-origin:0 0;animation:cruzar-8 28s linear 6.8s infinite}
+@keyframes cruzar-8 {
+0.000000% {transform:translate(1248.000px,-23.040px) rotate(154.3590deg);opacity:0.0000}
+0.412088% {transform:translate(1118.400px,39.168px) rotate(154.3590deg);opacity:0.8400}
+3.708791% {transform:translate(81.600px,536.832px) rotate(154.3590deg);opacity:0.8400}
+4.120879% {transform:translate(-48.000px,599.040px) rotate(154.3590deg);opacity:0.0000}
+100% {transform:translate(-48.000px,599.040px) rotate(154.3590deg);opacity:0}
+}
+.trayectoria-9 {transform-origin:0 0;animation:cruzar-9 28s linear 15.1s infinite}
+@keyframes cruzar-9 {
+0.000000% {transform:translate(-48.000px,438.000px) rotate(-6.7329deg);opacity:0.0000}
+0.064389% {transform:translate(-27.750px,435.609px) rotate(-6.7329deg);opacity:0.1313}
+0.128777% {transform:translate(-7.500px,433.219px) rotate(-6.7329deg);opacity:0.2625}
+0.193166% {transform:translate(12.750px,430.828px) rotate(-6.7329deg);opacity:0.3937}
+0.257555% {transform:translate(33.000px,428.438px) rotate(-6.7329deg);opacity:0.5250}
+0.321944% {transform:translate(53.250px,426.047px) rotate(-6.7329deg);opacity:0.6562}
+0.386332% {transform:translate(73.500px,423.656px) rotate(-6.7329deg);opacity:0.7875}
+0.450721% {transform:translate(93.750px,421.266px) rotate(-6.7329deg);opacity:0.8400}
+0.515110% {transform:translate(114.000px,418.875px) rotate(-6.7329deg);opacity:0.8400}
+0.579499% {transform:translate(134.250px,416.484px) rotate(-6.7329deg);opacity:0.8400}
+0.643887% {transform:translate(154.500px,414.094px) rotate(-6.7329deg);opacity:0.8400}
+0.708276% {transform:translate(174.750px,411.703px) rotate(-6.7329deg);opacity:0.8400}
+0.772665% {transform:translate(195.000px,409.312px) rotate(-6.7329deg);opacity:0.8400}
+0.837054% {transform:translate(215.250px,406.922px) rotate(-6.7329deg);opacity:0.8400}
+0.901442% {transform:translate(235.500px,404.531px) rotate(-6.7329deg);opacity:0.8400}
+0.965831% {transform:translate(255.750px,402.141px) rotate(-6.7329deg);opacity:0.8400}
+1.030220% {transform:translate(276.000px,399.750px) rotate(-6.7329deg);opacity:0.8400}
+1.094609% {transform:translate(296.250px,397.359px) rotate(-6.7329deg);opacity:0.8400}
+1.158997% {transform:translate(316.500px,394.969px) rotate(-6.7329deg);opacity:0.8400}
+1.223386% {transform:translate(336.750px,392.578px) rotate(-6.7329deg);opacity:0.8400}
+1.287775% {transform:translate(357.000px,390.188px) rotate(-6.7329deg);opacity:0.8400}
+1.352163% {transform:translate(377.250px,387.797px) rotate(-6.7329deg);opacity:0.8400}
+1.416552% {transform:translate(397.500px,385.406px) rotate(-6.7329deg);opacity:0.8400}
+1.480941% {transform:translate(417.750px,383.016px) rotate(-6.7329deg);opacity:0.8400}
+1.545330% {transform:translate(438.000px,380.625px) rotate(-6.7329deg);opacity:0.8400}
+1.609718% {transform:translate(458.250px,378.234px) rotate(-6.7329deg);opacity:0.8400}
+1.674107% {transform:translate(478.500px,375.844px) rotate(-6.7329deg);opacity:0.8400}
+1.738496% {transform:translate(498.750px,373.453px) rotate(-6.7329deg);opacity:0.8400}
+1.802885% {transform:translate(519.000px,371.062px) rotate(-6.7329deg);opacity:0.8400}
+1.867273% {transform:translate(539.250px,368.672px) rotate(-6.7329deg);opacity:0.8400}
+1.931662% {transform:translate(559.500px,366.281px) rotate(-6.7329deg);opacity:0.8400}
+1.996051% {transform:translate(579.750px,363.891px) rotate(-6.7329deg);opacity:0.8400}
+2.060440% {transform:translate(600.000px,361.500px) rotate(-6.7329deg);opacity:0.8400}
+2.124828% {transform:translate(620.250px,359.109px) rotate(-6.7329deg);opacity:0.8400}
+2.189217% {transform:translate(640.500px,356.719px) rotate(-6.7329deg);opacity:0.8400}
+2.253606% {transform:translate(660.750px,354.328px) rotate(-6.7329deg);opacity:0.8400}
+2.317995% {transform:translate(681.000px,351.938px) rotate(-6.7329deg);opacity:0.8400}
+2.382383% {transform:translate(701.250px,349.547px) rotate(-6.7329deg);opacity:0.8400}
+2.446772% {transform:translate(721.500px,347.156px) rotate(-6.7329deg);opacity:0.8400}
+2.511161% {transform:translate(741.750px,344.766px) rotate(-6.7329deg);opacity:0.8400}
+2.575549% {transform:translate(762.000px,342.375px) rotate(-6.7329deg);opacity:0.8400}
+2.639938% {transform:translate(782.250px,339.984px) rotate(-6.7329deg);opacity:0.8400}
+2.704327% {transform:translate(802.500px,337.594px) rotate(-6.7088deg);opacity:0.8400}
+2.768716% {transform:translate(822.754px,335.235px) rotate(-6.5417deg);opacity:0.8400}
+2.833104% {transform:translate(843.017px,332.960px) rotate(-6.2413deg);opacity:0.8400}
+2.897493% {transform:translate(863.294px,330.810px) rotate(-5.8382deg);opacity:0.8400}
+2.961882% {transform:translate(883.587px,328.818px) rotate(-5.3630deg);opacity:0.8400}
+3.026271% {transform:translate(903.897px,327.002px) rotate(-4.8462deg);opacity:0.8400}
+3.090659% {transform:translate(924.222px,325.373px) rotate(-4.3184deg);opacity:0.8400}
+3.155048% {transform:translate(944.562px,323.930px) rotate(-3.8102deg);opacity:0.8400}
+3.219437% {transform:translate(964.913px,322.659px) rotate(-3.3521deg);opacity:0.8400}
+3.283826% {transform:translate(985.272px,321.538px) rotate(-2.9748deg);opacity:0.8400}
+3.348214% {transform:translate(1005.638px,320.533px) rotate(-2.7087deg);opacity:0.8400}
+3.412603% {transform:translate(1026.007px,319.598px) rotate(-2.5845deg);opacity:0.8400}
+3.476992% {transform:translate(1046.377px,318.681px) rotate(-2.5792deg);opacity:0.8400}
+3.541380% {transform:translate(1066.747px,317.763px) rotate(-2.5792deg);opacity:0.8400}
+3.605769% {transform:translate(1087.117px,316.845px) rotate(-2.5792deg);opacity:0.8400}
+3.670158% {transform:translate(1107.487px,315.928px) rotate(-2.5792deg);opacity:0.8400}
+3.734547% {transform:translate(1127.857px,315.010px) rotate(-2.5792deg);opacity:0.7875}
+3.798935% {transform:translate(1148.227px,314.093px) rotate(-2.5792deg);opacity:0.6562}
+3.863324% {transform:translate(1168.597px,313.175px) rotate(-2.5792deg);opacity:0.5250}
+3.927713% {transform:translate(1188.967px,312.257px) rotate(-2.5792deg);opacity:0.3937}
+3.992102% {transform:translate(1209.337px,311.340px) rotate(-2.5792deg);opacity:0.2625}
+4.056490% {transform:translate(1229.707px,310.422px) rotate(-2.5792deg);opacity:0.1313}
+4.120879% {transform:translate(1250.077px,309.505px) rotate(-2.5792deg);opacity:0.0000}
+100% {transform:translate(1250.077px,309.505px) rotate(-2.5792deg);opacity:0}
+}
+.trayectoria-10 {transform-origin:0 0;animation:cruzar-10 28s linear 22.9s infinite}
+@keyframes cruzar-10 {
+0.000000% {transform:translate(1248.000px,146.000px) rotate(-178.2322deg);opacity:0.0000}
+0.412088% {transform:translate(1118.400px,142.000px) rotate(-178.2322deg);opacity:0.8400}
+3.708791% {transform:translate(81.600px,110.000px) rotate(-178.2322deg);opacity:0.8400}
+4.120879% {transform:translate(-48.000px,106.000px) rotate(-178.2322deg);opacity:0.0000}
+100% {transform:translate(-48.000px,106.000px) rotate(-178.2322deg);opacity:0}
+}</style>
 <defs>
 <linearGradient id="fondo-identidad" x1="0" y1="0" x2="1" y2="1">
 <stop offset="0" stop-color="#25131B"/>
@@ -254,38 +645,70 @@
 <rect x="1" y="1" width="1198" height="574" rx="15" fill="url(#cuadricula)" stroke="#302431"/>
 
 <g id="particulas" aria-hidden="true" clip-path="url(#borde-particulas)">
+<g class="diagonal-protegida" mask="url(#proteccion-particulas)">
 <g class="trayectoria trayectoria-0" opacity="0">
-<path d="M-36.00 0.00L0 0" fill="none" stroke="#F6DEA4" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
-<circle r="3.8" fill="#F6DEA4"/>
+<path d="M-44.00 0L0 0" fill="none" stroke="#F5DDA7" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.8" fill="#F5DDA7"/>
 </g>
+</g>
+<g class="diagonal-protegida" mask="url(#proteccion-particulas)">
 <g class="trayectoria trayectoria-1" opacity="0">
-<path d="M36.00 -0.52L0 0" fill="none" stroke="#F3761B" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
-<circle r="3.8" fill="#F3761B"/>
+<path d="M-58.00 0L0 0" fill="none" stroke="#F2B48C" stroke-width="1.6" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.8" fill="#F2B48C"/>
 </g>
+</g>
+<g class="diagonal-protegida" mask="url(#proteccion-particulas)">
 <g class="trayectoria trayectoria-2" opacity="0">
-<path d="M-33.20 -13.92L0 0" fill="none" stroke="#F6DEA4" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
-<circle r="3.6" fill="#F6DEA4"/>
+<path d="M-36.00 0L0 0" fill="none" stroke="#F4E7C7" stroke-width="1.4" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.6" fill="#F4E7C7"/>
 </g>
+</g>
+<g class="diagonal-protegida" mask="url(#proteccion-particulas)">
 <g class="trayectoria trayectoria-3" opacity="0">
-<path d="M12.92 -33.60L0 0" fill="none" stroke="#F3761B" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
-<circle r="3.6" fill="#F3761B"/>
+<path d="M-64.00 0L0 0" fill="none" stroke="#C6ADC8" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.8" fill="#C6ADC8"/>
+</g>
 </g>
 <g class="diagonal-protegida" mask="url(#proteccion-particulas)">
 <g class="trayectoria trayectoria-4" opacity="0">
-<path d="M-32.66 15.15L0 0" fill="none" stroke="#F6DEA4" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
-<circle r="3.8" fill="#F6DEA4"/>
+<path d="M-48.00 0L0 0" fill="none" stroke="#E5B4AC" stroke-width="1.6" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.8" fill="#E5B4AC"/>
 </g>
 </g>
 <g class="diagonal-protegida" mask="url(#proteccion-particulas)">
 <g class="trayectoria trayectoria-5" opacity="0">
-<path d="M-32.66 -15.15L0 0" fill="none" stroke="#F3761B" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
-<circle r="3.6" fill="#F3761B"/>
+<path d="M-70.00 0L0 0" fill="none" stroke="#F2B48C" stroke-width="1.4" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.6" fill="#F2B48C"/>
 </g>
 </g>
 <g class="diagonal-protegida" mask="url(#proteccion-particulas)">
 <g class="trayectoria trayectoria-6" opacity="0">
-<path d="M34.29 -10.96L0 0" fill="none" stroke="#F6DEA4" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
-<circle r="3.8" fill="#F6DEA4"/>
+<path d="M-40.00 0L0 0" fill="none" stroke="#F5DDA7" stroke-width="1.6" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.8" fill="#F5DDA7"/>
+</g>
+</g>
+<g class="diagonal-protegida" mask="url(#proteccion-particulas)">
+<g class="trayectoria trayectoria-7" opacity="0">
+<path d="M-56.00 0L0 0" fill="none" stroke="#C6ADC8" stroke-width="1.4" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.8" fill="#C6ADC8"/>
+</g>
+</g>
+<g class="diagonal-protegida" mask="url(#proteccion-particulas)">
+<g class="trayectoria trayectoria-8" opacity="0">
+<path d="M-42.00 0L0 0" fill="none" stroke="#E5B4AC" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.8" fill="#E5B4AC"/>
+</g>
+</g>
+<g class="diagonal-protegida" mask="url(#proteccion-particulas)">
+<g class="trayectoria trayectoria-9" opacity="0">
+<path d="M-62.00 0L0 0" fill="none" stroke="#F4E7C7" stroke-width="1.6" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.6" fill="#F4E7C7"/>
+</g>
+</g>
+<g class="diagonal-protegida" mask="url(#proteccion-particulas)">
+<g class="trayectoria trayectoria-10" opacity="0">
+<path d="M-52.00 0L0 0" fill="none" stroke="#F2B48C" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.8" fill="#F2B48C"/>
 </g>
 </g>
 </g>
