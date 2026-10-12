@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="576" viewBox="0 0 1200 576" role="img" aria-labelledby="titulo descripcion">
 <title id="titulo">Owen A. Hurtado | Scientific Computing</title>
-<desc id="descripcion">Physics undergraduate exploring computation, numerical methods and astrophysics. The Flamm paraboloid represents an equatorial spatial slice outside a Schwarzschild black hole's event horizon. The meridians show a 30-second axial rotation of the 3D visualization, with directional lighting; this does not represent a rotating black hole. The equations and circular sections remain fixed. Occasional straight particle trails are an artistic interpretation inspired by neutrinos; their timing is deterministic.</desc>
+<desc id="descripcion">Physics undergraduate exploring computation, numerical methods and astrophysics. The Flamm paraboloid represents an equatorial spatial slice outside a Schwarzschild black hole's event horizon. The meridians show a 30-second axial rotation of the 3D visualization, with directional lighting; this does not represent a rotating black hole. The equations and circular sections remain fixed. Occasional particle trails include four corner crossings and seven varied angles. Near the black hole, a subtle artistic deflection evokes gravitational lensing rather than a physical simulation; their timing is deterministic.</desc>
 <style>
     text {font-family:'Segoe UI',Arial,sans-serif;fill:#F2EEE9}
     .mono {font-family:Consolas,'DejaVu Sans Mono',monospace}
@@ -49,38 +49,70 @@
 <rect x="1" y="1" width="1198" height="574" rx="15" fill="url(#cuadricula)" stroke="#302431"/>
 
 <g id="particulas" aria-hidden="true" clip-path="url(#borde-particulas)">
+<g class="diagonal-protegida" mask="url(#proteccion-particulas)">
 <g class="trayectoria trayectoria-0" opacity="0">
-<path d="M-36.00 0.00L0 0" fill="none" stroke="#F6DEA4" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
-<circle r="3.8" fill="#F6DEA4"/>
+<path d="M-44.00 0L0 0" fill="none" stroke="#F5DDA7" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.8" fill="#F5DDA7"/>
 </g>
+</g>
+<g class="diagonal-protegida" mask="url(#proteccion-particulas)">
 <g class="trayectoria trayectoria-1" opacity="0">
-<path d="M36.00 -0.52L0 0" fill="none" stroke="#F3761B" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
-<circle r="3.8" fill="#F3761B"/>
+<path d="M-58.00 0L0 0" fill="none" stroke="#F2B48C" stroke-width="1.6" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.8" fill="#F2B48C"/>
 </g>
+</g>
+<g class="diagonal-protegida" mask="url(#proteccion-particulas)">
 <g class="trayectoria trayectoria-2" opacity="0">
-<path d="M-33.20 -13.92L0 0" fill="none" stroke="#F6DEA4" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
-<circle r="3.6" fill="#F6DEA4"/>
+<path d="M-36.00 0L0 0" fill="none" stroke="#F4E7C7" stroke-width="1.4" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.6" fill="#F4E7C7"/>
 </g>
+</g>
+<g class="diagonal-protegida" mask="url(#proteccion-particulas)">
 <g class="trayectoria trayectoria-3" opacity="0">
-<path d="M12.92 -33.60L0 0" fill="none" stroke="#F3761B" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
-<circle r="3.6" fill="#F3761B"/>
+<path d="M-64.00 0L0 0" fill="none" stroke="#C6ADC8" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.8" fill="#C6ADC8"/>
+</g>
 </g>
 <g class="diagonal-protegida" mask="url(#proteccion-particulas)">
 <g class="trayectoria trayectoria-4" opacity="0">
-<path d="M-32.66 15.15L0 0" fill="none" stroke="#F6DEA4" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
-<circle r="3.8" fill="#F6DEA4"/>
+<path d="M-48.00 0L0 0" fill="none" stroke="#E5B4AC" stroke-width="1.6" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.8" fill="#E5B4AC"/>
 </g>
 </g>
 <g class="diagonal-protegida" mask="url(#proteccion-particulas)">
 <g class="trayectoria trayectoria-5" opacity="0">
-<path d="M-32.66 -15.15L0 0" fill="none" stroke="#F3761B" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
-<circle r="3.6" fill="#F3761B"/>
+<path d="M-70.00 0L0 0" fill="none" stroke="#F2B48C" stroke-width="1.4" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.6" fill="#F2B48C"/>
 </g>
 </g>
 <g class="diagonal-protegida" mask="url(#proteccion-particulas)">
 <g class="trayectoria trayectoria-6" opacity="0">
-<path d="M34.29 -10.96L0 0" fill="none" stroke="#F6DEA4" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
-<circle r="3.8" fill="#F6DEA4"/>
+<path d="M-40.00 0L0 0" fill="none" stroke="#F5DDA7" stroke-width="1.6" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.8" fill="#F5DDA7"/>
+</g>
+</g>
+<g class="diagonal-protegida" mask="url(#proteccion-particulas)">
+<g class="trayectoria trayectoria-7" opacity="0">
+<path d="M-56.00 0L0 0" fill="none" stroke="#C6ADC8" stroke-width="1.4" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.8" fill="#C6ADC8"/>
+</g>
+</g>
+<g class="diagonal-protegida" mask="url(#proteccion-particulas)">
+<g class="trayectoria trayectoria-8" opacity="0">
+<path d="M-42.00 0L0 0" fill="none" stroke="#E5B4AC" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.8" fill="#E5B4AC"/>
+</g>
+</g>
+<g class="diagonal-protegida" mask="url(#proteccion-particulas)">
+<g class="trayectoria trayectoria-9" opacity="0">
+<path d="M-62.00 0L0 0" fill="none" stroke="#F4E7C7" stroke-width="1.6" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.6" fill="#F4E7C7"/>
+</g>
+</g>
+<g class="diagonal-protegida" mask="url(#proteccion-particulas)">
+<g class="trayectoria trayectoria-10" opacity="0">
+<path d="M-52.00 0L0 0" fill="none" stroke="#F2B48C" stroke-width="1.5" stroke-opacity=".6" stroke-linecap="round"/>
+<circle r="3.8" fill="#F2B48C"/>
 </g>
 </g>
 </g>
